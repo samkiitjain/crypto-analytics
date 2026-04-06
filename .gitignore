@@ -2,3 +2,28 @@
 .terraform.lock.hcl
 *.tfstate
 *.tfstate.backup
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+
+# Secrets — never commit
+.env
+
+# Parquet data files — too large for git
+data/
+
+# pytest cache
+.pytest_cache/
+
+# uv
+.python-version
+
+# VS Code
+.vscode/
