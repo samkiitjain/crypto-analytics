@@ -1,0 +1,104 @@
+# Airflow 2.9.1 — LocalExecutor + PostgreSQL
+# ADC credentials are mounted from the host machine (~/.config/gcloud)
+# so no service account key file is needed locally.
+#
+# Usage:
+#   1. Copy .env.example to .env and fill in values
+#   2. Run: echo "AIRFLOW_UID=$(id -u)" >> .env   (Linux/Mac only)
+#   3. Run: docker-compose up airflow-init
+#   4. Run: docker-compose up -d
+
+x-airflow-common: &airflow-common
+  build:
+    context: ..          # repo root — so COPY python/ resolves correctly
+    dockerfile: airflow/Dockerfile
+  env_file:
+    - .env
+  environment:
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor
+    AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+    AIRFLOW__CORE__FERNET_KEY: ${AIRFLOW_FERNET_KEY}
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
+    AIRFLOW__WEBSERVER__SECRET_KEY: ${AIRFLOW_SECRET_KEY}
+
+    # GCP — ADC picked up automatically from mounted gcloud config
+    # Do NOT set GOOGLE_APPLICATION_CREDENTIALS here; leave ADC to resolve it
+    GCLOUD_PROJECT: ${GCP_PROJECT_ID}
+
+    # Pipeline config — forwarded into crypto_pipeline/config/settings.py
+    STORAGE_BACKEND: ${STORAGE_BACKEND}
+    GCS_BUCKET_NAME: ${GCS_BUCKET_NAME}
+    COINGECKO_API_KEY: ${COINGECKO_API_KEY}
+    NEWS_API_KEY: ${NEWS_API_KEY}
+
+  volumes:
+    - ./dags:/opt/airflow/dags
+    - ./logs:/opt/airflow/logs
+    - ./plugins:/opt/airflow/plugins
+    # Mount host gcloud ADC credentials read-only
+    - ${HOME}/.config/gcloud:/home/airflow/.config/gcloud:ro
+  user: "${AIRFLOW_UID:-50000}:0"
+  depends_on:
+    postgres:
+      condition: service_healthy
+
+services:
+
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - postgres-db-volume:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+      interval: 10s
+      retries: 5
+      start_period: 5s
+    restart: always
+
+  airflow-webserver:
+    <<: *airflow-common
+    command: webserver
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    restart: always
+
+  airflow-scheduler:
+    <<: *airflow-common
+    command: scheduler
+    healthcheck:
+      test: ["CMD", "airflow", "jobs", "check", "--job-type", "SchedulerJob", "--hostname", "$${HOSTNAME}"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    restart: always
+
+  # One-shot init container — runs DB migrations + creates admin user
+  # Run this once before starting the stack: docker-compose up airflow-init
+  airflow-init:
+    <<: *airflow-common
+    command: >
+      bash -c "
+        airflow db migrate &&
+        airflow users create
+          --username admin
+          --password admin
+          --firstname Admin
+          --lastname User
+          --role Admin
+          --email admin@example.com
+      "
+    restart: "no"
+
+volumes:
+  postgres-db-volume:

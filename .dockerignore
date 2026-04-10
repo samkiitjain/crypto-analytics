@@ -1,0 +1,23 @@
+# .dockerignore  (lives at repo root, same level as airflow/ and python/)
+python/.env
+python/.venv
+python/.pytest_cache
+python/data/
+python/__pycache__/
+**/__pycache__/
+**/*.pyc
+# Tests — no need to ship test code into the image
+python/tests/
+
+# uv specific
+python/.python-version
+python/uv.lock
+
+# Other repo folders — not needed in the Airflow image at all
+airflow/logs/
+dbt/
+terraform/
+docs/
+.git/
+.gitignore
+*.md

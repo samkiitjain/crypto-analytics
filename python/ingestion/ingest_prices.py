@@ -7,7 +7,7 @@ from config.settings import (
     COINS,
     PRICES_PATH,
     INCREMENTAL_DAYS,
-    BACKFILL_DAYS
+    STORAGE_TARGET
 )
 
 log = get_logger("ingest_prices")
@@ -71,7 +71,11 @@ def run(coins: list = COINS, days : int = INCREMENTAL_DAYS, target_date: date = 
     
     combined = pd.concat(all_frame, ignore_index=True)
 
-    output_path = write_parquet(df=combined, base_path=PRICES_PATH, partition_date=target_date, file_name=f"prices_{target_date.isoformat()}")
+    if STORAGE_TARGET == "GCS":
+        from utils.gcs_writer import upload_to_gcs
+        output_path = upload_to_gcs(df=combined, base_path=PRICES_PATH, partition_date=target_date, file_name=f"prices_{target_date.isoformat()}")
+    else:
+        output_path = write_parquet(df=combined, base_path=PRICES_PATH, partition_date=target_date, file_name=f"prices_{target_date.isoformat()}")
 
     log.info(f"Ingestion completed | total_rows = {len(combined)} | output = {output_path} ")
 

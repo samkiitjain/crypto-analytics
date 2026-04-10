@@ -22,6 +22,9 @@ NEWS_KEYWORDS = {
     "Cardano": ["Cardano", "ADA"],
 }
 
+NEWS_EXCLUDED_DOMAINS = "pypi.org,github.com,stackoverflow.com"
+NEWS_PAGE_SIZE = 20
+
 ## API endpoints
 COIN_GECKO_API_URL = "https://api.coingecko.com/api/v3"
 NEWS_API_URL = "https://newsapi.org/v2/everything"
@@ -40,3 +43,10 @@ LOG_LEVEL = "INFO"
 # ── Ingestion modes ───────────────────────────────────────
 BACKFILL_DAYS       = 30   # used on first run
 INCREMENTAL_DAYS    = 1    # used on every daily run after initial backfill
+
+
+#GCP config
+GCP_PROJECT_ID = os.getenv("GCP_PROJECT_ID")
+GCP_BUCKET_NAME = os.getenv("GCP_BUCKET_NAME")
+
+STORAGE_TARGET = os.getenv("STORAGE_TARGET", "LOCAL")  # Default to LOCAL if not set
