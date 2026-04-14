@@ -1,0 +1,37 @@
+# Plan and apply for dev
+terraform plan -var-file="envs/dev.tfvars"
+terraform apply -var-file="envs/dev.tfvars"
+
+# Plan and apply for staging
+terraform plan -var-file="envs/staging.tfvars"
+terraform apply -var-file="envs/staging.tfvars"
+
+# Plan and apply for prod
+terraform plan -var-file="envs/prod.tfvars"
+terraform apply -var-file="envs/prod.tfvars"
+
+
+Docker :
+
+# Stop and remove all containers, networks
+docker-compose down --remove-orphans
+
+# Remove the postgres volume
+docker volume rm airflow_postgres-db-volume
+
+# Remove all unused images (this clears the cached layers)
+docker image prune -a
+
+# Rebuild from scratch
+cd ..
+docker build --no-cache -f airflow/Dockerfile -t crypto-airflow:latest .
+
+# Re-init the database
+cd airflow
+docker-compose up airflow-init
+
+# Start the stack
+docker-compose up -d
+
+# Verify files:
+docker exec airflow-airflow-scheduler-1 cat /opt/crypto_pipeline/ingestion/ingest_news_articles.py | Select-String "def run"

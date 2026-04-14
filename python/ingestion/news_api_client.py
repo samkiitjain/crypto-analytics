@@ -50,3 +50,4 @@ def fetch_news_articles(keyword:str, from_date : date)->list :
 
     log.info(f"Fetched {len(articles)} articles | keyword = {keyword} | total_available = {total}")
     time.sleep(NEWS_API_RATE_LIMIT_PER_SECOND)
+    return articles

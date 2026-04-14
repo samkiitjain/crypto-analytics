@@ -1,5 +1,5 @@
 locals {
-  name_prefix = "${var.project_id}-${var.environment}"
+  name_prefix = "crypto-analytics-${var.environment}"
   common_labels = {
     environment = var.environment
     managed_by  = "terraform"
@@ -12,7 +12,7 @@ resource "google_storage_bucket" "raw_data" {
     name = "${local.name_prefix}-raw-data"
     location = var.gcp_region
     labels = local.common_labels
-    force_destroy = false
+    force_destroy = true
 
     uniform_bucket_level_access = true
 
@@ -32,13 +32,15 @@ resource "google_storage_bucket" "raw_data" {
  
 }
 
-resource "google_bigquery_dataset" "crypto_analytics_bq_dataset" {
-    dataset_id = replace("${local.name_prefix}_crypto_analytics", "-", "_")
-    location = var.gcp_region
-    labels = local.common_labels
-    description = var.dataset_description
-    friendly_name = var.dataset_friendly_name
+resource "google_bigquery_dataset" "crypto_analytics" {
+  for_each = var.bq_datasets
 
-    delete_contents_on_destroy = false
-  
+  project = var.project_id
+  dataset_id    = replace("${local.name_prefix}_${each.value}", "-", "_")
+  location      = var.gcp_region
+  labels        = local.common_labels
+  description   = var.dataset_description
+  friendly_name = var.dataset_friendly_name
+
+  delete_contents_on_destroy = false
 }

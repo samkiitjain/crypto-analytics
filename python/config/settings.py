@@ -10,7 +10,7 @@ COIN_GECKO_API_KEY = os.getenv("COIN_GECKO_API_KEY")
 NEWS_API_KEY = os.getenv("NEWS_API_KEY")
 
 ## Coins to track
-COINS = ["bitcoin"]
+COINS = ["bitcoin", "ethereum", "ripple", "litecoin", "cardano"]
 
 
 ##News keywords to track

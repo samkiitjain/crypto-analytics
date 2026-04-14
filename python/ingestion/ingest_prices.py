@@ -39,7 +39,7 @@ def parse_ohlcv(data : list, coin_id: str, ingested_at: date) -> pd.DataFrame:
         })
     return pd.DataFrame(records)
 
-def run(coins: list = COINS, days : int = INCREMENTAL_DAYS, target_date: date = None):
+def run(coins: list = COINS, days : int = INCREMENTAL_DAYS, target_date: date = None) -> str:
     """"
         This is the main function which will be called from Airflow DAG. It will call the price API for each coin and write the response to parquet file
         which is Hive-style partitioned by date. The output structure mirrors future GCS bucket layout.
@@ -78,4 +78,5 @@ def run(coins: list = COINS, days : int = INCREMENTAL_DAYS, target_date: date = 
         output_path = write_parquet(df=combined, base_path=PRICES_PATH, partition_date=target_date, file_name=f"prices_{target_date.isoformat()}")
 
     log.info(f"Ingestion completed | total_rows = {len(combined)} | output = {output_path} ")
+    return output_path
 

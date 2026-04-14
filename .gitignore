@@ -27,3 +27,6 @@ data/
 
 # VS Code
 .vscode/
+
+#airflow logs
+airflow/logs/

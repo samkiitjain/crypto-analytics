@@ -1,12 +1,11 @@
-# Airflow 2.9.1 — LocalExecutor + PostgreSQL
-# ADC credentials are mounted from the host machine (~/.config/gcloud)
+# Airflow 3.0 — LocalExecutor + PostgreSQL
+# ADC credentials are mounted from the host machine
 # so no service account key file is needed locally.
 #
 # Usage:
 #   1. Copy .env.example to .env and fill in values
-#   2. Run: echo "AIRFLOW_UID=$(id -u)" >> .env   (Linux/Mac only)
-#   3. Run: docker-compose up airflow-init
-#   4. Run: docker-compose up -d
+#   2. Run: docker-compose up airflow-init
+#   3. Run: docker-compose up -d
 
 x-airflow-common: &airflow-common
   build:
@@ -14,29 +13,31 @@ x-airflow-common: &airflow-common
     dockerfile: airflow/Dockerfile
   env_file:
     - .env
-  environment:
+  environment: &airflow-common-env
     AIRFLOW__CORE__EXECUTOR: LocalExecutor
     AIRFLOW__CORE__LOAD_EXAMPLES: "false"
     AIRFLOW__CORE__FERNET_KEY: ${AIRFLOW_FERNET_KEY}
     AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
     AIRFLOW__WEBSERVER__SECRET_KEY: ${AIRFLOW_SECRET_KEY}
+    AIRFLOW__CORE__AUTH_MANAGER: airflow.providers.fab.auth_manager.fab_auth_manager.FabAuthManager
 
     # GCP — ADC picked up automatically from mounted gcloud config
-    # Do NOT set GOOGLE_APPLICATION_CREDENTIALS here; leave ADC to resolve it
     GCLOUD_PROJECT: ${GCP_PROJECT_ID}
 
     # Pipeline config — forwarded into crypto_pipeline/config/settings.py
-    STORAGE_BACKEND: ${STORAGE_BACKEND}
-    GCS_BUCKET_NAME: ${GCS_BUCKET_NAME}
+    STORAGE_TARGET: ${STORAGE_TARGET}
+    GCP_BUCKET_NAME: ${GCP_BUCKET_NAME}
     COINGECKO_API_KEY: ${COINGECKO_API_KEY}
     NEWS_API_KEY: ${NEWS_API_KEY}
+    AIRFLOW__CORE__EXECUTION_API_SERVER_URL: 'http://airflow-apiserver:8080/execution/'
+    AIRFLOW__API_AUTH__JWT_SECRET: ${AIRFLOW_SECRET_KEY}
 
   volumes:
     - ./dags:/opt/airflow/dags
     - ./logs:/opt/airflow/logs
     - ./plugins:/opt/airflow/plugins
-    # Mount host gcloud ADC credentials read-only
-    - ${HOME}/.config/gcloud:/home/airflow/.config/gcloud:ro
+    - ${GCLOUD_ADC_PATH}:/home/airflow/.config/gcloud:ro
+    - ../dbt:/opt/airflow/dbt
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     postgres:
@@ -59,13 +60,13 @@ services:
       start_period: 5s
     restart: always
 
-  airflow-webserver:
+  airflow-apiserver:
     <<: *airflow-common
-    command: webserver
+    command: api-server
     ports:
       - "8080:8080"
     healthcheck:
-      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/api/v2/monitor/health"]
       interval: 30s
       timeout: 10s
       retries: 5
@@ -76,7 +77,18 @@ services:
     <<: *airflow-common
     command: scheduler
     healthcheck:
-      test: ["CMD", "airflow", "jobs", "check", "--job-type", "SchedulerJob", "--hostname", "$${HOSTNAME}"]
+      test: ["CMD", "airflow", "jobs", "check", "--job-type", "SchedulerJob"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    restart: always
+
+  airflow-dag-processor:
+    <<: *airflow-common
+    command: dag-processor
+    healthcheck:
+      test: ["CMD", "airflow", "jobs", "check", "--job-type", "DagProcessorJob"]
       interval: 30s
       timeout: 10s
       retries: 5
@@ -84,20 +96,15 @@ services:
     restart: always
 
   # One-shot init container — runs DB migrations + creates admin user
-  # Run this once before starting the stack: docker-compose up airflow-init
+  # Run once before starting the stack: docker-compose up airflow-init
   airflow-init:
     <<: *airflow-common
-    command: >
-      bash -c "
-        airflow db migrate &&
-        airflow users create
-          --username admin
-          --password admin
-          --firstname Admin
-          --lastname User
-          --role Admin
-          --email admin@example.com
-      "
+    environment:
+      <<: *airflow-common-env
+      _AIRFLOW_DB_MIGRATE: 'true'
+      _AIRFLOW_WWW_USER_CREATE: 'true'
+      _AIRFLOW_WWW_USER_USERNAME: admin
+      _AIRFLOW_WWW_USER_PASSWORD: admin
     restart: "no"
 
 volumes:

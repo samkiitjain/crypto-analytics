@@ -1,7 +1,7 @@
 from datetime import date, datetime, timezone, timedelta
 from utils.file_writer import write_parquet
 from utils.logger import get_logger
-from config.settings import (NEWS_KEYWORDS, NEWS_PATH, COINS, STORAGE_TARGET)
+from config.settings import (INCREMENTAL_DAYS, NEWS_KEYWORDS, NEWS_PATH, COINS, STORAGE_TARGET)
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import hashlib
 import pandas as pd
@@ -118,9 +118,10 @@ def parse_articles(articles: list, coin_id: str, keyword: str, ingested_at : dat
             **sentiment_score
             }
         )
-        return pd.DataFrame(records)
+    
+    return pd.DataFrame(records)
 
-def run(coins: list = COINS, target_date: date = None):
+def run(coins: list = COINS, lookup_days : int = INCREMENTAL_DAYS) -> str:
     """
     Main entry point for news ingestion.
 
@@ -136,8 +137,8 @@ def run(coins: list = COINS, target_date: date = None):
                      defaults to yesterday — news from the past day
 
     """
-    target_date = target_date or date.today - timedelta(days=1)
-    ingested_at = datetime.now().timetz(timezone.utc)
+    target_date = date.today() - timedelta(days=lookup_days)
+    ingested_at = datetime.now(timezone.utc)
 
     log.info(f"Starting news ingestion | date : {target_date} | coin:{coins}")
 
@@ -195,6 +196,7 @@ def run(coins: list = COINS, target_date: date = None):
         )
 
     log.info(f"News ingestion complete | total_rows={len(combined)} | output={output_path}")
+    return output_path
 
 
 

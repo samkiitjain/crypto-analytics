@@ -17,6 +17,16 @@ variable "environment" {
     }
 }
 
+variable "bq_datasets" {
+  description = "BigQuery dataset layers to create"
+  type        = map(string)
+  default = {
+    raw     = "raw"
+    staging = "staging"
+    marts   = "marts"
+  }
+}
+
 variable "bucket_lifecycle_rules" {
   description = "List of lifecycle rules for the storage bucket. Each rule should be a map with 'age' and 'action' keys."
   type = number
