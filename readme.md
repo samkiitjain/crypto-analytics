@@ -189,22 +189,6 @@ dbt test --target dev --profiles-dir . --project-dir .
 
 ---
 
-## Background
-
-My Java work over 11 years covered API middleware, authentication and authorisation services,
-event-driven integrations, and batch processing — the kind of backend work where you spend
-a lot of time in meetings translating what the business wants into system design. I was good
-at it but I wanted to work closer to the data and the infrastructure.
-
-I started this project to learn data engineering properly, not just follow tutorials. If I
-were starting over I would have made the switch earlier. The fundamentals transfer — distributed
-systems thinking, ownership boundaries, designing for failure, building for the environment you
-will eventually need — but the problems feel more interesting to me here.
-
-The dbt transformation layer is currently in progress. The Streamlit dashboard comes after that.
-
----
-
 ## Status
 
 | Component | Status |
