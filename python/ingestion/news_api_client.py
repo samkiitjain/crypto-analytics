@@ -26,7 +26,6 @@ def fetch_news_articles(keyword:str, from_date : date)->list :
         "q": keyword,
         "language": "en",
         "sortBy": "publishedAt",
-        "pageSize": NEWS_PAGE_SIZE,
         "from": from_date.isoformat,
         "excludeDomains" : NEWS_EXCLUDED_DOMAINS
     }

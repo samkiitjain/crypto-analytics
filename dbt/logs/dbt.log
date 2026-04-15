@@ -1,0 +1,1229 @@
+[0m14:00:32.897600 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A44CEE5A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A44F295090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A44F2956D0>]}
+
+
+============================== 14:00:33.037534 | e2858e2a-3520-4c6f-a8e3-f8fb0c950ffe ==============================
+[0m14:00:33.037534 [info ] [MainThread]: Running with dbt=1.11.8
+[0m14:00:33.038218 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Work\\Crypto-Analysis\\dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt deps', 'use_experimental_parser': 'False', 'log_path': 'C:\\Work\\Crypto-Analysis\\dbt\\logs'}
+[0m14:00:33.062045 [warn ] [MainThread]: [[33mWARNING[0m][CustomKeyInConfigDeprecation]: Deprecated functionality
+Custom key `+tag` found in `config` at path `marts.+tag` in file
+`C:\Work\Crypto-Analysis\dbt\dbt_project.yml`. Custom config keys should move
+into the `config.meta`.
+[0m14:00:33.062596 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'e2858e2a-3520-4c6f-a8e3-f8fb0c950ffe', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A44F196B10>]}
+[0m14:00:33.063283 [warn ] [MainThread]: [[33mWARNING[0m][CustomTopLevelKeyDeprecation]: Deprecated functionality
+Unexpected top-level key clean-target in file
+`C:\Work\Crypto-Analysis\dbt\dbt_project.yml`
+[0m14:00:33.063617 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'e2858e2a-3520-4c6f-a8e3-f8fb0c950ffe', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A44F2A8380>]}
+[0m14:00:33.130707 [error] [MainThread]: Encountered an error:
+Runtime Error
+  at path ['name']: 'crypto-analytics' does not match '^[^\\d\\W]\\w*$'
+
+Error encountered in C:\Work\Crypto-Analysis\dbt\dbt_project.yml
+[0m14:00:33.131555 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- CustomKeyInConfigDeprecation: 2 occurrences
+- CustomTopLevelKeyDeprecation: 2 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m14:00:33.132374 [debug] [MainThread]: Command `dbt deps` failed at 14:00:33.132262 after 0.39 seconds
+[0m14:00:33.132688 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A44F1B7B50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A44F1B7A50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A44F2BB7A0>]}
+[0m14:00:33.133013 [debug] [MainThread]: Flushing usage events
+[0m14:00:33.681299 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:02:32.057329 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B6E8E097F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B6E62CAE90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B6EB15C2D0>]}
+
+
+============================== 14:02:32.061866 | 0b4da2db-8663-4736-a32b-f38783204e5b ==============================
+[0m14:02:32.061866 [info ] [MainThread]: Running with dbt=1.11.8
+[0m14:02:32.062439 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Work\\Crypto-Analysis\\dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt deps', 'use_experimental_parser': 'False', 'log_path': 'C:\\Work\\Crypto-Analysis\\dbt\\logs'}
+[0m14:02:32.065592 [warn ] [MainThread]: [[33mWARNING[0m][CustomKeyInConfigDeprecation]: Deprecated functionality
+Custom key `crypto_analytics` found in `config` at path `crypto_analytics` in
+file `C:\Work\Crypto-Analysis\dbt\dbt_project.yml`. Custom config keys should
+move into the `config.meta`.
+[0m14:02:32.066130 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '0b4da2db-8663-4736-a32b-f38783204e5b', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B6E9FEFA80>]}
+[0m14:02:32.066935 [warn ] [MainThread]: [[33mWARNING[0m][CustomTopLevelKeyDeprecation]: Deprecated functionality
+Unexpected top-level key target-paths in file
+`C:\Work\Crypto-Analysis\dbt\dbt_project.yml`
+[0m14:02:32.067386 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '0b4da2db-8663-4736-a32b-f38783204e5b', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B6E9FDFF00>]}
+[0m14:02:32.131133 [error] [MainThread]: Encountered an error:
+Runtime Error
+  at path []: Additional properties are not allowed ('target-paths' was unexpected)
+
+Error encountered in C:\Work\Crypto-Analysis\dbt\dbt_project.yml
+[0m14:02:32.131989 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- CustomKeyInConfigDeprecation: 1 occurrence
+- CustomTopLevelKeyDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m14:02:32.132952 [debug] [MainThread]: Command `dbt deps` failed at 14:02:32.132835 after 0.17 seconds
+[0m14:02:32.133329 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B6EB174B50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B6EB174D50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B6EA01F020>]}
+[0m14:02:32.133632 [debug] [MainThread]: Flushing usage events
+[0m14:02:32.598654 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:02:49.115514 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C3EEE697F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C3EC32AE90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C3F11C82D0>]}
+
+
+============================== 14:02:49.119471 | efa97b49-e081-47b8-be6d-e0471e1c7a5b ==============================
+[0m14:02:49.119471 [info ] [MainThread]: Running with dbt=1.11.8
+[0m14:02:49.120063 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Work\\Crypto-Analysis\\dbt', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt deps', 'use_experimental_parser': 'False', 'log_path': 'C:\\Work\\Crypto-Analysis\\dbt\\logs'}
+[0m14:02:49.123607 [warn ] [MainThread]: [[33mWARNING[0m][CustomKeyInConfigDeprecation]: Deprecated functionality
+Custom key `crypto_analytics` found in `config` at path `crypto_analytics` in
+file `C:\Work\Crypto-Analysis\dbt\dbt_project.yml`. Custom config keys should
+move into the `config.meta`.
+[0m14:02:49.124082 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'efa97b49-e081-47b8-be6d-e0471e1c7a5b', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C3F004FA80>]}
+[0m14:02:49.245817 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'efa97b49-e081-47b8-be6d-e0471e1c7a5b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C3F003FDF0>]}
+[0m14:02:49.647994 [debug] [MainThread]: Set downloads directory='C:\Users\jains\AppData\Local\Temp\dbt-downloads-61ui5yp4'
+[0m14:02:49.648607 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m14:02:49.788724 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m14:02:49.790240 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Package dbt-labs/dbt-utils was not found in the package index
+[0m14:02:49.790880 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- CustomKeyInConfigDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m14:02:49.791655 [debug] [MainThread]: Command `dbt deps` failed at 14:02:49.791560 after 0.75 seconds
+[0m14:02:49.791942 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C3F11D7A50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C3F11D7B50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C3F144C320>]}
+[0m14:02:49.792226 [debug] [MainThread]: Flushing usage events
+[0m14:02:50.216118 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:06:55.733900 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000176E33F97F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000176E08DAE90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000176E57582D0>]}
+
+
+============================== 14:06:55.738062 | 6df3b83e-fbd5-4d93-b0b6-54fcbcf7ad36 ==============================
+[0m14:06:55.738062 [info ] [MainThread]: Running with dbt=1.11.8
+[0m14:06:55.738638 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Work\\Crypto-Analysis\\dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt deps', 'use_experimental_parser': 'False', 'log_path': 'C:\\Work\\Crypto-Analysis\\dbt\\logs'}
+[0m14:06:55.852925 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '6df3b83e-fbd5-4d93-b0b6-54fcbcf7ad36', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000176E3A95350>]}
+[0m14:06:55.873464 [debug] [MainThread]: Set downloads directory='C:\Users\jains\AppData\Local\Temp\dbt-downloads-nmsnjod0'
+[0m14:06:55.874012 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m14:06:55.992029 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m14:06:55.993728 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m14:06:56.093905 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m14:06:56.107763 [info ] [MainThread]: Updating lock file in file path: C:\Work\Crypto-Analysis\dbt/package-lock.yml
+[0m14:06:56.116319 [debug] [MainThread]: Set downloads directory='C:\Users\jains\AppData\Local\Temp\dbt-downloads-jj36817i'
+[0m14:06:56.119187 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m14:06:56.640175 [info ] [MainThread]: Installed from version 1.3.3
+[0m14:06:56.640715 [info ] [MainThread]: Up to date!
+[0m14:06:56.641189 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '6df3b83e-fbd5-4d93-b0b6-54fcbcf7ad36', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000176E599BAC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000176E59997B0>]}
+[0m14:06:56.642714 [debug] [MainThread]: Command `dbt deps` succeeded at 14:06:56.642583 after 1.04 seconds
+[0m14:06:56.643095 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000176E5767950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000176E3FC26C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000176E3FC1D60>]}
+[0m14:06:56.643464 [debug] [MainThread]: Flushing usage events
+[0m14:06:57.084270 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:07:14.333001 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5CCFB97F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5CA47AE90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5CE34CE10>]}
+
+
+============================== 14:07:14.337101 | b370145a-f014-4bc6-b6da-105beddc0926 ==============================
+[0m14:07:14.337101 [info ] [MainThread]: Running with dbt=1.11.8
+[0m14:07:14.337694 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': '.', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt compile --target dev --profiles-dir . --project-dir .', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m14:07:14.340222 [error] [MainThread]: Encountered an error:
+Runtime Error
+  
+  dbt encountered an error while trying to read your profiles.yml file.
+  
+  Runtime Error
+    Syntax error near line 27
+    ------------------------------
+    24 |         retries: 1
+    25 |     
+    26 |     target:dev #Default target is dev. From Airflow task, we will pass --target flag.
+    27 | 
+    
+    Raw Error:
+    ------------------------------
+    while scanning a simple key
+      in "<unicode string>", line 26, column 5
+    could not find expected ':'
+      in "<unicode string>", line 27, column 1
+  
+[0m14:07:14.341100 [debug] [MainThread]: Command `dbt compile` failed at 14:07:14.341000 after 0.07 seconds
+[0m14:07:14.341396 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5CE35C8A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5CE38CDD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5CE351E10>]}
+[0m14:07:14.341747 [debug] [MainThread]: Flushing usage events
+[0m14:07:14.810875 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:07:39.949514 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026192B197F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002618FFDAE90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026193EACE10>]}
+
+
+============================== 14:07:39.953494 | 906cff76-7801-498c-b49b-9577f62ee319 ==============================
+[0m14:07:39.953494 [info ] [MainThread]: Running with dbt=1.11.8
+[0m14:07:39.954058 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': '.', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt compile --target dev --profiles-dir . --project-dir .', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m14:07:39.956449 [error] [MainThread]: Encountered an error:
+Runtime Error
+  
+  dbt encountered an error while trying to read your profiles.yml file.
+  
+  Runtime Error
+    Syntax error near line 27
+    ------------------------------
+    24 |         retries: 1
+    25 |     
+    26 |     target:dev #Default target is dev. From Airflow task, we will pass --target flag.
+    27 | 
+    
+    Raw Error:
+    ------------------------------
+    while scanning a simple key
+      in "<unicode string>", line 26, column 5
+    could not find expected ':'
+      in "<unicode string>", line 27, column 1
+  
+[0m14:07:39.957515 [debug] [MainThread]: Command `dbt compile` failed at 14:07:39.957343 after 0.08 seconds
+[0m14:07:39.958136 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026193EC08A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026193EECDD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026193EB1E10>]}
+[0m14:07:39.958420 [debug] [MainThread]: Flushing usage events
+[0m14:07:40.407594 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:09:43.489936 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021B229B97F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021B2364DBD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021B24D1FED0>]}
+
+
+============================== 14:09:43.493898 | 29118734-4fba-4f99-9a1e-81275fdc6c44 ==============================
+[0m14:09:43.493898 [info ] [MainThread]: Running with dbt=1.11.8
+[0m14:09:43.494534 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': '.', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'invocation_command': 'dbt compile --target dev --profiles-dir . --project-dir .', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m14:09:43.497016 [error] [MainThread]: Encountered an error:
+argument of type 'NoneType' is not iterable
+[0m14:09:43.499782 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Work\Crypto-Analysis\dbt\.venv\Lib\site-packages\dbt\cli\requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Work\Crypto-Analysis\dbt\.venv\Lib\site-packages\dbt\cli\requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Work\Crypto-Analysis\dbt\.venv\Lib\site-packages\dbt\cli\requires.py", line 272, in wrapper
+    profile = load_profile(flags.PROJECT_DIR, flags.VARS, flags.PROFILE, flags.TARGET, threads)
+  File "C:\Work\Crypto-Analysis\dbt\.venv\Lib\site-packages\dbt\config\runtime.py", line 79, in load_profile
+    profile = Profile.render(
+        profile_renderer, profile_name, profile_name_override, target_override, threads_override
+    )
+  File "C:\Work\Crypto-Analysis\dbt\.venv\Lib\site-packages\dbt\config\profile.py", line 404, in render
+    return cls.from_raw_profiles(
+           ~~~~~~~~~~~~~~~~~~~~~^
+        raw_profiles=raw_profiles,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        threads_override=threads_override,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Work\Crypto-Analysis\dbt\.venv\Lib\site-packages\dbt\config\profile.py", line 370, in from_raw_profiles
+    return cls.from_raw_profile_info(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        raw_profile=raw_profile,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        threads_override=threads_override,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Work\Crypto-Analysis\dbt\.venv\Lib\site-packages\dbt\config\profile.py", line 316, in from_raw_profile_info
+    target_name, profile_data = cls.render_profile(
+                                ~~~~~~~~~~~~~~~~~~^
+        raw_profile, profile_name, target_override, renderer
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Work\Crypto-Analysis\dbt\.venv\Lib\site-packages\dbt\config\profile.py", line 282, in render_profile
+    raw_profile_data = cls._get_profile_data(raw_profile, profile_name, target_name)
+  File "C:\Work\Crypto-Analysis\dbt\.venv\Lib\site-packages\dbt\config\profile.py", line 207, in _get_profile_data
+    if target_name not in outputs:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'NoneType' is not iterable
+
+[0m14:09:43.501521 [debug] [MainThread]: Command `dbt compile` failed at 14:09:43.501282 after 0.18 seconds
+[0m14:09:43.501931 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021B24D33230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021B24D5F410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021B24D21E10>]}
+[0m14:09:43.502302 [debug] [MainThread]: Flushing usage events
+[0m14:09:43.975288 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:11:22.334248 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011E9D9497F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011E9E5EDBD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011E9ECEFED0>]}
+
+
+============================== 14:11:22.338325 | 81f3166c-a36d-4b76-9609-30d2a34ab552 ==============================
+[0m14:11:22.338325 [info ] [MainThread]: Running with dbt=1.11.8
+[0m14:11:22.338841 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': '.', 'use_colors': 'True', 'invocation_command': 'dbt compile --target dev --profiles-dir . --project-dir .', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m14:11:34.074356 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '81f3166c-a36d-4b76-9609-30d2a34ab552', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011E9DFF5350>]}
+[0m14:11:34.128919 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '81f3166c-a36d-4b76-9609-30d2a34ab552', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011EC464C6B0>]}
+[0m14:11:34.129549 [info ] [MainThread]: Registered adapter: bigquery=1.11.1
+[0m14:11:34.508863 [debug] [MainThread]: checksum: 205f67941a37c44b34a8b709ae683ccb08f2061b4926cd29bbf893726d03834e, vars: {}, profile: , target: dev, version: 1.11.8
+[0m14:11:34.509887 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m14:11:34.510293 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '81f3166c-a36d-4b76-9609-30d2a34ab552', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011EC4609350>]}
+[0m14:11:34.514827 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Error reading crypto_analytics: staging\_sources.yml - Runtime Error
+    Syntax error near line 70
+    ------------------------------
+    67 |             computed in Python during ingestion (not in dbt).
+    68 |           columns:
+    69 |             - name: coin
+    70 |                 description: Coin this article was fetched for.
+    71 |                 tests:
+    72 |                 - not_null
+    73 |     
+    
+    Raw Error:
+    ------------------------------
+    mapping values are not allowed in this context
+      in "<unicode string>", line 70, column 28
+[0m14:11:34.515684 [debug] [MainThread]: Command `dbt compile` failed at 14:11:34.515587 after 12.34 seconds
+[0m14:11:34.515972 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011EC47E4B90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011EC47E4C80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000011E9ECDBE70>]}
+[0m14:11:34.516337 [debug] [MainThread]: Flushing usage events
+[0m14:11:34.962958 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:15:31.844174 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000244DD7B97F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000244DE45DBD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000244DEB5FED0>]}
+
+
+============================== 14:15:31.848289 | 6017f5ab-a738-47c5-aa27-5ac108437121 ==============================
+[0m14:15:31.848289 [info ] [MainThread]: Running with dbt=1.11.8
+[0m14:15:31.848853 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': '.', 'invocation_command': 'dbt compile --target dev --profiles-dir . --project-dir .', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m14:15:32.765716 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '6017f5ab-a738-47c5-aa27-5ac108437121', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000244DDE65350>]}
+[0m14:15:32.819192 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '6017f5ab-a738-47c5-aa27-5ac108437121', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000244831A3DF0>]}
+[0m14:15:32.819862 [info ] [MainThread]: Registered adapter: bigquery=1.11.1
+[0m14:15:33.150710 [debug] [MainThread]: checksum: 205f67941a37c44b34a8b709ae683ccb08f2061b4926cd29bbf893726d03834e, vars: {}, profile: , target: dev, version: 1.11.8
+[0m14:15:33.151775 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m14:15:33.152226 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '6017f5ab-a738-47c5-aa27-5ac108437121', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000244831EEB50>]}
+[0m14:15:33.187369 [warn ] [MainThread]: [[33mWARNING[0m][PropertyMovedToConfigDeprecation]: Deprecated functionality
+Found `freshness` as a top-level property of `sources[0]` in file
+`models\staging\_sources.yml`. The `freshness` top-level property should be
+moved into the `config` of `sources[0]`.
+[0m14:15:33.187988 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '6017f5ab-a738-47c5-aa27-5ac108437121', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000244834726C0>]}
+[0m14:15:35.587423 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `accepted_values` defined on
+'crypto_analytics_prices' in package 'crypto_analytics'
+(models\staging\_sources.yml). Arguments to generic tests should be nested under
+the `arguments` property.
+[0m14:15:35.588529 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '6017f5ab-a738-47c5-aa27-5ac108437121', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024483A53070>]}
+[0m14:15:35.730588 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 3 unused configuration paths:
+- models.crypto_analytics.intermediate
+- models.crypto_analytics.marts
+- models.crypto_analytics.staging
+[0m14:15:35.741327 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '6017f5ab-a738-47c5-aa27-5ac108437121', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002448376E0D0>]}
+[0m14:15:35.818968 [debug] [MainThread]: Wrote artifact WritableManifest to .\target\manifest.json
+[0m14:15:35.821957 [debug] [MainThread]: Wrote artifact SemanticManifest to .\target\semantic_manifest.json
+[0m14:15:35.917573 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '6017f5ab-a738-47c5-aa27-5ac108437121', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000244837FBD10>]}
+[0m14:15:35.918068 [info ] [MainThread]: Found 18 data tests, 2 sources, 655 macros
+[0m14:15:35.918504 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '6017f5ab-a738-47c5-aa27-5ac108437121', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000244839DB750>]}
+[0m14:15:35.920612 [info ] [MainThread]: 
+[0m14:15:35.921002 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m14:15:35.921356 [info ] [MainThread]: 
+[0m14:15:35.921865 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m14:15:35.922162 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '6017f5ab-a738-47c5-aa27-5ac108437121', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000244838237F0>]}
+[0m14:15:35.922436 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:15:38.478380 [debug] [Thread-4 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_news_ingested_at.d04ec80d1e
+[0m14:15:38.478821 [debug] [Thread-2 (]: Began running node test.crypto_analytics.source_accepted_values_crypto_analytics_prices_coin__bitcoin__ethereum__ripple__litecoin__cardano.359abaa8ca
+[0m14:15:38.479155 [debug] [Thread-1 (]: Began running node test.crypto_analytics.source_accepted_values_crypto_analytics_news_sentiment_label__positive__negative__neutral.ea4564a20f
+[0m14:15:38.479495 [debug] [Thread-3 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_news_coin.e878c055e8
+[0m14:15:38.480013 [debug] [Thread-4 (]: Acquiring new bigquery connection 'test.crypto_analytics.source_not_null_crypto_analytics_news_ingested_at.d04ec80d1e'
+[0m14:15:38.480429 [debug] [Thread-2 (]: Acquiring new bigquery connection 'test.crypto_analytics.source_accepted_values_crypto_analytics_prices_coin__bitcoin__ethereum__ripple__litecoin__cardano.359abaa8ca'
+[0m14:15:38.480824 [debug] [Thread-1 (]: Acquiring new bigquery connection 'test.crypto_analytics.source_accepted_values_crypto_analytics_news_sentiment_label__positive__negative__neutral.ea4564a20f'
+[0m14:15:38.481224 [debug] [Thread-3 (]: Acquiring new bigquery connection 'test.crypto_analytics.source_not_null_crypto_analytics_news_coin.e878c055e8'
+[0m14:15:38.481557 [debug] [Thread-4 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_news_ingested_at.d04ec80d1e
+[0m14:15:38.481866 [debug] [Thread-2 (]: Began compiling node test.crypto_analytics.source_accepted_values_crypto_analytics_prices_coin__bitcoin__ethereum__ripple__litecoin__cardano.359abaa8ca
+[0m14:15:38.482148 [debug] [Thread-1 (]: Began compiling node test.crypto_analytics.source_accepted_values_crypto_analytics_news_sentiment_label__positive__negative__neutral.ea4564a20f
+[0m14:15:38.482423 [debug] [Thread-3 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_news_coin.e878c055e8
+[0m14:15:38.492807 [debug] [Thread-4 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_news_ingested_at.d04ec80d1e"
+[0m14:15:38.496389 [debug] [Thread-2 (]: Writing injected SQL for node "test.crypto_analytics.source_accepted_values_crypto_analytics_prices_coin__bitcoin__ethereum__ripple__litecoin__cardano.359abaa8ca"
+[0m14:15:38.499534 [debug] [Thread-1 (]: Writing injected SQL for node "test.crypto_analytics.source_accepted_values_crypto_analytics_news_sentiment_label__positive__negative__neutral.ea4564a20f"
+[0m14:15:38.502708 [debug] [Thread-3 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_news_coin.e878c055e8"
+[0m14:15:38.508474 [debug] [Thread-3 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_news_coin.e878c055e8
+[0m14:15:38.508942 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m14:15:38.509770 [debug] [Thread-3 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_news_coin.e878c055e8
+[0m14:15:38.510163 [debug] [Thread-3 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_news_published_at.6d61bae4d6
+[0m14:15:38.510468 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_news_coin.e878c055e8, now test.crypto_analytics.source_not_null_crypto_analytics_news_published_at.6d61bae4d6)
+[0m14:15:38.510835 [debug] [Thread-1 (]: Began executing node test.crypto_analytics.source_accepted_values_crypto_analytics_news_sentiment_label__positive__negative__neutral.ea4564a20f
+[0m14:15:38.511134 [debug] [Thread-3 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_news_published_at.6d61bae4d6
+[0m14:15:38.511426 [debug] [Thread-4 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_news_ingested_at.d04ec80d1e
+[0m14:15:38.511710 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m14:15:38.511979 [debug] [Thread-2 (]: Began executing node test.crypto_analytics.source_accepted_values_crypto_analytics_prices_coin__bitcoin__ethereum__ripple__litecoin__cardano.359abaa8ca
+[0m14:15:38.515140 [debug] [Thread-3 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_news_published_at.6d61bae4d6"
+[0m14:15:38.515515 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m14:15:38.516247 [debug] [Thread-1 (]: Finished running node test.crypto_analytics.source_accepted_values_crypto_analytics_news_sentiment_label__positive__negative__neutral.ea4564a20f
+[0m14:15:38.516547 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m14:15:38.517185 [debug] [Thread-4 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_news_ingested_at.d04ec80d1e
+[0m14:15:38.517584 [debug] [Thread-1 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_compound.37273993a0
+[0m14:15:38.518190 [debug] [Thread-2 (]: Finished running node test.crypto_analytics.source_accepted_values_crypto_analytics_prices_coin__bitcoin__ethereum__ripple__litecoin__cardano.359abaa8ca
+[0m14:15:38.518625 [debug] [Thread-4 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_label.3e7e579bb3
+[0m14:15:38.518986 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_accepted_values_crypto_analytics_news_sentiment_label__positive__negative__neutral.ea4564a20f, now test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_compound.37273993a0)
+[0m14:15:38.519343 [debug] [Thread-2 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_news_title.7b74bf7f95
+[0m14:15:38.519634 [debug] [Thread-3 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_news_published_at.6d61bae4d6
+[0m14:15:38.519928 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_news_ingested_at.d04ec80d1e, now test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_label.3e7e579bb3)
+[0m14:15:38.520220 [debug] [Thread-1 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_compound.37273993a0
+[0m14:15:38.520529 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_accepted_values_crypto_analytics_prices_coin__bitcoin__ethereum__ripple__litecoin__cardano.359abaa8ca, now test.crypto_analytics.source_not_null_crypto_analytics_news_title.7b74bf7f95)
+[0m14:15:38.520825 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m14:15:38.521108 [debug] [Thread-4 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_label.3e7e579bb3
+[0m14:15:38.524678 [debug] [Thread-1 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_compound.37273993a0"
+[0m14:15:38.525092 [debug] [Thread-2 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_news_title.7b74bf7f95
+[0m14:15:38.525821 [debug] [Thread-3 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_news_published_at.6d61bae4d6
+[0m14:15:38.528618 [debug] [Thread-4 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_label.3e7e579bb3"
+[0m14:15:38.531647 [debug] [Thread-2 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_news_title.7b74bf7f95"
+[0m14:15:38.532036 [debug] [Thread-3 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_news_url_hash.1302b3147d
+[0m14:15:38.532600 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_news_published_at.6d61bae4d6, now test.crypto_analytics.source_not_null_crypto_analytics_news_url_hash.1302b3147d)
+[0m14:15:38.532889 [debug] [Thread-3 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_news_url_hash.1302b3147d
+[0m14:15:38.536331 [debug] [Thread-3 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_news_url_hash.1302b3147d"
+[0m14:15:38.537197 [debug] [Thread-1 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_compound.37273993a0
+[0m14:15:38.537627 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:15:38.538508 [debug] [Thread-1 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_compound.37273993a0
+[0m14:15:38.538830 [debug] [Thread-1 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_close.b04a3a06b4
+[0m14:15:38.539131 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_compound.37273993a0, now test.crypto_analytics.source_not_null_crypto_analytics_prices_close.b04a3a06b4)
+[0m14:15:38.539559 [debug] [Thread-1 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_close.b04a3a06b4
+[0m14:15:38.543444 [debug] [Thread-1 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_close.b04a3a06b4"
+[0m14:15:38.543892 [debug] [Thread-4 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_label.3e7e579bb3
+[0m14:15:38.544254 [debug] [Thread-3 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_news_url_hash.1302b3147d
+[0m14:15:38.544583 [debug] [Thread-2 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_news_title.7b74bf7f95
+[0m14:15:38.544971 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m14:15:38.545277 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m14:15:38.545614 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m14:15:38.546350 [debug] [Thread-4 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_label.3e7e579bb3
+[0m14:15:38.546962 [debug] [Thread-3 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_news_url_hash.1302b3147d
+[0m14:15:38.547555 [debug] [Thread-2 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_news_title.7b74bf7f95
+[0m14:15:38.547926 [debug] [Thread-4 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_coin.63ce8cd25c
+[0m14:15:38.548287 [debug] [Thread-3 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_date.c839b15569
+[0m14:15:38.548613 [debug] [Thread-1 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_close.b04a3a06b4
+[0m14:15:38.548947 [debug] [Thread-2 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_high.17e77c77d3
+[0m14:15:38.549333 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_label.3e7e579bb3, now test.crypto_analytics.source_not_null_crypto_analytics_prices_coin.63ce8cd25c)
+[0m14:15:38.549748 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_news_url_hash.1302b3147d, now test.crypto_analytics.source_not_null_crypto_analytics_prices_date.c839b15569)
+[0m14:15:38.550098 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:15:38.550447 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_news_title.7b74bf7f95, now test.crypto_analytics.source_not_null_crypto_analytics_prices_high.17e77c77d3)
+[0m14:15:38.550751 [debug] [Thread-4 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_coin.63ce8cd25c
+[0m14:15:38.551047 [debug] [Thread-3 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_date.c839b15569
+[0m14:15:38.551637 [debug] [Thread-1 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_close.b04a3a06b4
+[0m14:15:38.551972 [debug] [Thread-2 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_high.17e77c77d3
+[0m14:15:38.555257 [debug] [Thread-4 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_coin.63ce8cd25c"
+[0m14:15:38.558163 [debug] [Thread-3 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_date.c839b15569"
+[0m14:15:38.558566 [debug] [Thread-1 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_ingested_at.451dd64efe
+[0m14:15:38.561378 [debug] [Thread-2 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_high.17e77c77d3"
+[0m14:15:38.561932 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_prices_close.b04a3a06b4, now test.crypto_analytics.source_not_null_crypto_analytics_prices_ingested_at.451dd64efe)
+[0m14:15:38.562408 [debug] [Thread-1 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_ingested_at.451dd64efe
+[0m14:15:38.565741 [debug] [Thread-1 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_ingested_at.451dd64efe"
+[0m14:15:38.567792 [debug] [Thread-3 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_date.c839b15569
+[0m14:15:38.568167 [debug] [Thread-2 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_high.17e77c77d3
+[0m14:15:38.568562 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m14:15:38.568877 [debug] [Thread-4 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_coin.63ce8cd25c
+[0m14:15:38.569239 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m14:15:38.569584 [debug] [Thread-1 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_ingested_at.451dd64efe
+[0m14:15:38.570271 [debug] [Thread-3 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_date.c839b15569
+[0m14:15:38.570587 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m14:15:38.571148 [debug] [Thread-2 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_high.17e77c77d3
+[0m14:15:38.571425 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:15:38.571730 [debug] [Thread-3 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_low.76694e1a2e
+[0m14:15:38.572328 [debug] [Thread-4 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_coin.63ce8cd25c
+[0m14:15:38.572631 [debug] [Thread-2 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_open.d78e3ebfc8
+[0m14:15:38.573342 [debug] [Thread-1 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_ingested_at.451dd64efe
+[0m14:15:38.573676 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_prices_date.c839b15569, now test.crypto_analytics.source_not_null_crypto_analytics_prices_low.76694e1a2e)
+[0m14:15:38.573998 [debug] [Thread-4 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_volume.87c79dc605
+[0m14:15:38.574330 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_prices_high.17e77c77d3, now test.crypto_analytics.source_not_null_crypto_analytics_prices_open.d78e3ebfc8)
+[0m14:15:38.574657 [debug] [Thread-1 (]: Began running node test.crypto_analytics.source_unique_crypto_analytics_news_url_hash.e48008dd53
+[0m14:15:38.574975 [debug] [Thread-3 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_low.76694e1a2e
+[0m14:15:38.575265 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_prices_coin.63ce8cd25c, now test.crypto_analytics.source_not_null_crypto_analytics_prices_volume.87c79dc605)
+[0m14:15:38.575544 [debug] [Thread-2 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_open.d78e3ebfc8
+[0m14:15:38.575823 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_prices_ingested_at.451dd64efe, now test.crypto_analytics.source_unique_crypto_analytics_news_url_hash.e48008dd53)
+[0m14:15:38.579013 [debug] [Thread-3 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_low.76694e1a2e"
+[0m14:15:38.579337 [debug] [Thread-4 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_volume.87c79dc605
+[0m14:15:38.581931 [debug] [Thread-2 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_open.d78e3ebfc8"
+[0m14:15:38.582249 [debug] [Thread-1 (]: Began compiling node test.crypto_analytics.source_unique_crypto_analytics_news_url_hash.e48008dd53
+[0m14:15:38.586806 [debug] [Thread-4 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_volume.87c79dc605"
+[0m14:15:38.591528 [debug] [Thread-1 (]: Writing injected SQL for node "test.crypto_analytics.source_unique_crypto_analytics_news_url_hash.e48008dd53"
+[0m14:15:38.592285 [debug] [Thread-3 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_low.76694e1a2e
+[0m14:15:38.592634 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m14:15:38.592958 [debug] [Thread-2 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_open.d78e3ebfc8
+[0m14:15:38.593709 [debug] [Thread-3 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_low.76694e1a2e
+[0m14:15:38.594020 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m14:15:38.594693 [debug] [Thread-2 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_open.d78e3ebfc8
+[0m14:15:38.596131 [debug] [Thread-4 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_volume.87c79dc605
+[0m14:15:38.596955 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m14:15:38.597373 [debug] [Thread-1 (]: Began executing node test.crypto_analytics.source_unique_crypto_analytics_news_url_hash.e48008dd53
+[0m14:15:38.597958 [debug] [Thread-4 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_volume.87c79dc605
+[0m14:15:38.598260 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:15:38.599049 [debug] [Thread-1 (]: Finished running node test.crypto_analytics.source_unique_crypto_analytics_news_url_hash.e48008dd53
+[0m14:15:38.600273 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:15:38.600554 [debug] [MainThread]: Connection 'test.crypto_analytics.source_not_null_crypto_analytics_prices_volume.87c79dc605' was properly closed.
+[0m14:15:38.600782 [debug] [MainThread]: Connection 'test.crypto_analytics.source_not_null_crypto_analytics_prices_open.d78e3ebfc8' was properly closed.
+[0m14:15:38.601000 [debug] [MainThread]: Connection 'test.crypto_analytics.source_unique_crypto_analytics_news_url_hash.e48008dd53' was properly closed.
+[0m14:15:38.601200 [debug] [MainThread]: Connection 'test.crypto_analytics.source_not_null_crypto_analytics_prices_low.76694e1a2e' was properly closed.
+[0m14:15:38.603337 [debug] [MainThread]: Command end result
+[0m14:15:38.729502 [debug] [MainThread]: Wrote artifact WritableManifest to .\target\manifest.json
+[0m14:15:38.731914 [debug] [MainThread]: Wrote artifact SemanticManifest to .\target\semantic_manifest.json
+[0m14:15:38.738409 [debug] [MainThread]: Wrote artifact RunExecutionResult to .\target\run_results.json
+[0m14:15:38.739037 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- PropertyMovedToConfigDeprecation: 2 occurrences
+- MissingArgumentsPropertyInGenericTestDeprecation: 2 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m14:15:38.740164 [debug] [MainThread]: Command `dbt compile` succeeded at 14:15:38.740048 after 7.01 seconds
+[0m14:15:38.740517 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000244DD320AD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000244DD3209D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000244DFBDD010>]}
+[0m14:15:38.740834 [debug] [MainThread]: Flushing usage events
+[0m14:15:39.222458 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:17:54.661285 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A283BB97F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A28485DBD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A285F2FED0>]}
+
+
+============================== 14:17:54.665228 | 6a06ef1c-12f1-4d9b-a6b6-093dd2091593 ==============================
+[0m14:17:54.665228 [info ] [MainThread]: Running with dbt=1.11.8
+[0m14:17:54.665835 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': '.', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt compile --target dev --profiles-dir . --project-dir .', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m14:17:55.571032 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '6a06ef1c-12f1-4d9b-a6b6-093dd2091593', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A284281350>]}
+[0m14:17:55.620772 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '6a06ef1c-12f1-4d9b-a6b6-093dd2091593', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A2A95A3DF0>]}
+[0m14:17:55.621377 [info ] [MainThread]: Registered adapter: bigquery=1.11.1
+[0m14:17:55.959852 [debug] [MainThread]: checksum: 205f67941a37c44b34a8b709ae683ccb08f2061b4926cd29bbf893726d03834e, vars: {}, profile: , target: dev, version: 1.11.8
+[0m14:17:56.091075 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m14:17:56.091460 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m14:17:56.091705 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m14:17:56.092528 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 3 unused configuration paths:
+- models.crypto_analytics.marts
+- models.crypto_analytics.staging
+- models.crypto_analytics.intermediate
+[0m14:17:56.115478 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '6a06ef1c-12f1-4d9b-a6b6-093dd2091593', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A2A9A67950>]}
+[0m14:17:56.189276 [debug] [MainThread]: Wrote artifact WritableManifest to .\target\manifest.json
+[0m14:17:56.191823 [debug] [MainThread]: Wrote artifact SemanticManifest to .\target\semantic_manifest.json
+[0m14:17:56.201292 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '6a06ef1c-12f1-4d9b-a6b6-093dd2091593', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A2A9CF05F0>]}
+[0m14:17:56.201739 [info ] [MainThread]: Found 18 data tests, 2 sources, 655 macros
+[0m14:17:56.202220 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '6a06ef1c-12f1-4d9b-a6b6-093dd2091593', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A2A9CDE970>]}
+[0m14:17:56.204392 [info ] [MainThread]: 
+[0m14:17:56.204717 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m14:17:56.204995 [info ] [MainThread]: 
+[0m14:17:56.205436 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m14:17:56.205716 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '6a06ef1c-12f1-4d9b-a6b6-093dd2091593', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A2A9CE2F70>]}
+[0m14:17:56.205987 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:17:57.243717 [debug] [Thread-1 (]: Began running node test.crypto_analytics.source_accepted_values_crypto_analytics_news_sentiment_label__positive__negative__neutral.ea4564a20f
+[0m14:17:57.244149 [debug] [Thread-4 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_news_ingested_at.d04ec80d1e
+[0m14:17:57.244496 [debug] [Thread-3 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_news_coin.e878c055e8
+[0m14:17:57.244821 [debug] [Thread-2 (]: Began running node test.crypto_analytics.source_accepted_values_crypto_analytics_prices_coin__bitcoin__ethereum__ripple__litecoin__cardano.359abaa8ca
+[0m14:17:57.245281 [debug] [Thread-1 (]: Acquiring new bigquery connection 'test.crypto_analytics.source_accepted_values_crypto_analytics_news_sentiment_label__positive__negative__neutral.ea4564a20f'
+[0m14:17:57.245691 [debug] [Thread-4 (]: Acquiring new bigquery connection 'test.crypto_analytics.source_not_null_crypto_analytics_news_ingested_at.d04ec80d1e'
+[0m14:17:57.246055 [debug] [Thread-3 (]: Acquiring new bigquery connection 'test.crypto_analytics.source_not_null_crypto_analytics_news_coin.e878c055e8'
+[0m14:17:57.246420 [debug] [Thread-2 (]: Acquiring new bigquery connection 'test.crypto_analytics.source_accepted_values_crypto_analytics_prices_coin__bitcoin__ethereum__ripple__litecoin__cardano.359abaa8ca'
+[0m14:17:57.246718 [debug] [Thread-1 (]: Began compiling node test.crypto_analytics.source_accepted_values_crypto_analytics_news_sentiment_label__positive__negative__neutral.ea4564a20f
+[0m14:17:57.247003 [debug] [Thread-4 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_news_ingested_at.d04ec80d1e
+[0m14:17:57.247278 [debug] [Thread-3 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_news_coin.e878c055e8
+[0m14:17:57.247554 [debug] [Thread-2 (]: Began compiling node test.crypto_analytics.source_accepted_values_crypto_analytics_prices_coin__bitcoin__ethereum__ripple__litecoin__cardano.359abaa8ca
+[0m14:17:57.265233 [debug] [Thread-1 (]: Writing injected SQL for node "test.crypto_analytics.source_accepted_values_crypto_analytics_news_sentiment_label__positive__negative__neutral.ea4564a20f"
+[0m14:17:57.271241 [debug] [Thread-4 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_news_ingested_at.d04ec80d1e"
+[0m14:17:57.274125 [debug] [Thread-3 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_news_coin.e878c055e8"
+[0m14:17:57.278936 [debug] [Thread-2 (]: Writing injected SQL for node "test.crypto_analytics.source_accepted_values_crypto_analytics_prices_coin__bitcoin__ethereum__ripple__litecoin__cardano.359abaa8ca"
+[0m14:17:57.280450 [debug] [Thread-4 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_news_ingested_at.d04ec80d1e
+[0m14:17:57.280810 [debug] [Thread-1 (]: Began executing node test.crypto_analytics.source_accepted_values_crypto_analytics_news_sentiment_label__positive__negative__neutral.ea4564a20f
+[0m14:17:57.281207 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m14:17:57.281569 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m14:17:57.281888 [debug] [Thread-2 (]: Began executing node test.crypto_analytics.source_accepted_values_crypto_analytics_prices_coin__bitcoin__ethereum__ripple__litecoin__cardano.359abaa8ca
+[0m14:17:57.282170 [debug] [Thread-3 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_news_coin.e878c055e8
+[0m14:17:57.282993 [debug] [Thread-4 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_news_ingested_at.d04ec80d1e
+[0m14:17:57.283716 [debug] [Thread-1 (]: Finished running node test.crypto_analytics.source_accepted_values_crypto_analytics_news_sentiment_label__positive__negative__neutral.ea4564a20f
+[0m14:17:57.284049 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m14:17:57.284341 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m14:17:57.284664 [debug] [Thread-4 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_news_published_at.6d61bae4d6
+[0m14:17:57.285043 [debug] [Thread-1 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_compound.37273993a0
+[0m14:17:57.285647 [debug] [Thread-2 (]: Finished running node test.crypto_analytics.source_accepted_values_crypto_analytics_prices_coin__bitcoin__ethereum__ripple__litecoin__cardano.359abaa8ca
+[0m14:17:57.286214 [debug] [Thread-3 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_news_coin.e878c055e8
+[0m14:17:57.286510 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_news_ingested_at.d04ec80d1e, now test.crypto_analytics.source_not_null_crypto_analytics_news_published_at.6d61bae4d6)
+[0m14:17:57.286853 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_accepted_values_crypto_analytics_news_sentiment_label__positive__negative__neutral.ea4564a20f, now test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_compound.37273993a0)
+[0m14:17:57.287189 [debug] [Thread-2 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_label.3e7e579bb3
+[0m14:17:57.287545 [debug] [Thread-3 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_news_title.7b74bf7f95
+[0m14:17:57.287887 [debug] [Thread-4 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_news_published_at.6d61bae4d6
+[0m14:17:57.288196 [debug] [Thread-1 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_compound.37273993a0
+[0m14:17:57.288481 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_accepted_values_crypto_analytics_prices_coin__bitcoin__ethereum__ripple__litecoin__cardano.359abaa8ca, now test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_label.3e7e579bb3)
+[0m14:17:57.288777 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_news_coin.e878c055e8, now test.crypto_analytics.source_not_null_crypto_analytics_news_title.7b74bf7f95)
+[0m14:17:57.292204 [debug] [Thread-4 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_news_published_at.6d61bae4d6"
+[0m14:17:57.295026 [debug] [Thread-1 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_compound.37273993a0"
+[0m14:17:57.295381 [debug] [Thread-2 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_label.3e7e579bb3
+[0m14:17:57.295715 [debug] [Thread-3 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_news_title.7b74bf7f95
+[0m14:17:57.299462 [debug] [Thread-2 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_label.3e7e579bb3"
+[0m14:17:57.302308 [debug] [Thread-3 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_news_title.7b74bf7f95"
+[0m14:17:57.302886 [debug] [Thread-1 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_compound.37273993a0
+[0m14:17:57.303260 [debug] [Thread-4 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_news_published_at.6d61bae4d6
+[0m14:17:57.303648 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:17:57.304065 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m14:17:57.304799 [debug] [Thread-1 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_compound.37273993a0
+[0m14:17:57.305084 [debug] [Thread-2 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_label.3e7e579bb3
+[0m14:17:57.305354 [debug] [Thread-3 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_news_title.7b74bf7f95
+[0m14:17:57.305938 [debug] [Thread-4 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_news_published_at.6d61bae4d6
+[0m14:17:57.306248 [debug] [Thread-1 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_news_url_hash.1302b3147d
+[0m14:17:57.306584 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m14:17:57.306878 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m14:17:57.307243 [debug] [Thread-4 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_close.b04a3a06b4
+[0m14:17:57.307619 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_compound.37273993a0, now test.crypto_analytics.source_not_null_crypto_analytics_news_url_hash.1302b3147d)
+[0m14:17:57.308257 [debug] [Thread-2 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_label.3e7e579bb3
+[0m14:17:57.308933 [debug] [Thread-3 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_news_title.7b74bf7f95
+[0m14:17:57.309260 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_news_published_at.6d61bae4d6, now test.crypto_analytics.source_not_null_crypto_analytics_prices_close.b04a3a06b4)
+[0m14:17:57.309551 [debug] [Thread-1 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_news_url_hash.1302b3147d
+[0m14:17:57.309857 [debug] [Thread-2 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_coin.63ce8cd25c
+[0m14:17:57.310180 [debug] [Thread-3 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_date.c839b15569
+[0m14:17:57.310459 [debug] [Thread-4 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_close.b04a3a06b4
+[0m14:17:57.313898 [debug] [Thread-1 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_news_url_hash.1302b3147d"
+[0m14:17:57.314260 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_label.3e7e579bb3, now test.crypto_analytics.source_not_null_crypto_analytics_prices_coin.63ce8cd25c)
+[0m14:17:57.314612 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_news_title.7b74bf7f95, now test.crypto_analytics.source_not_null_crypto_analytics_prices_date.c839b15569)
+[0m14:17:57.317306 [debug] [Thread-4 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_close.b04a3a06b4"
+[0m14:17:57.317685 [debug] [Thread-2 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_coin.63ce8cd25c
+[0m14:17:57.318003 [debug] [Thread-3 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_date.c839b15569
+[0m14:17:57.320817 [debug] [Thread-2 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_coin.63ce8cd25c"
+[0m14:17:57.323395 [debug] [Thread-3 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_date.c839b15569"
+[0m14:17:57.323846 [debug] [Thread-1 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_news_url_hash.1302b3147d
+[0m14:17:57.324203 [debug] [Thread-4 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_close.b04a3a06b4
+[0m14:17:57.324665 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:17:57.325047 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m14:17:57.325866 [debug] [Thread-1 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_news_url_hash.1302b3147d
+[0m14:17:57.326197 [debug] [Thread-2 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_coin.63ce8cd25c
+[0m14:17:57.327057 [debug] [Thread-4 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_close.b04a3a06b4
+[0m14:17:57.327347 [debug] [Thread-3 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_date.c839b15569
+[0m14:17:57.327647 [debug] [Thread-1 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_high.17e77c77d3
+[0m14:17:57.327998 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m14:17:57.328302 [debug] [Thread-4 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_ingested_at.451dd64efe
+[0m14:17:57.328603 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m14:17:57.328931 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_news_url_hash.1302b3147d, now test.crypto_analytics.source_not_null_crypto_analytics_prices_high.17e77c77d3)
+[0m14:17:57.329503 [debug] [Thread-2 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_coin.63ce8cd25c
+[0m14:17:57.329782 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_prices_close.b04a3a06b4, now test.crypto_analytics.source_not_null_crypto_analytics_prices_ingested_at.451dd64efe)
+[0m14:17:57.330396 [debug] [Thread-3 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_date.c839b15569
+[0m14:17:57.330701 [debug] [Thread-1 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_high.17e77c77d3
+[0m14:17:57.331031 [debug] [Thread-2 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_low.76694e1a2e
+[0m14:17:57.331352 [debug] [Thread-4 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_ingested_at.451dd64efe
+[0m14:17:57.331645 [debug] [Thread-3 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_open.d78e3ebfc8
+[0m14:17:57.334489 [debug] [Thread-1 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_high.17e77c77d3"
+[0m14:17:57.334840 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_prices_coin.63ce8cd25c, now test.crypto_analytics.source_not_null_crypto_analytics_prices_low.76694e1a2e)
+[0m14:17:57.337634 [debug] [Thread-4 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_ingested_at.451dd64efe"
+[0m14:17:57.337989 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_prices_date.c839b15569, now test.crypto_analytics.source_not_null_crypto_analytics_prices_open.d78e3ebfc8)
+[0m14:17:57.338401 [debug] [Thread-2 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_low.76694e1a2e
+[0m14:17:57.338827 [debug] [Thread-3 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_open.d78e3ebfc8
+[0m14:17:57.341501 [debug] [Thread-2 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_low.76694e1a2e"
+[0m14:17:57.346534 [debug] [Thread-3 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_open.d78e3ebfc8"
+[0m14:17:57.346875 [debug] [Thread-1 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_high.17e77c77d3
+[0m14:17:57.347376 [debug] [Thread-4 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_ingested_at.451dd64efe
+[0m14:17:57.347742 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:17:57.348119 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m14:17:57.348951 [debug] [Thread-1 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_high.17e77c77d3
+[0m14:17:57.349606 [debug] [Thread-4 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_ingested_at.451dd64efe
+[0m14:17:57.349901 [debug] [Thread-2 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_low.76694e1a2e
+[0m14:17:57.350182 [debug] [Thread-1 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_volume.87c79dc605
+[0m14:17:57.350508 [debug] [Thread-3 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_open.d78e3ebfc8
+[0m14:17:57.350888 [debug] [Thread-4 (]: Began running node test.crypto_analytics.source_unique_crypto_analytics_news_url_hash.e48008dd53
+[0m14:17:57.351222 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m14:17:57.351527 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_prices_high.17e77c77d3, now test.crypto_analytics.source_not_null_crypto_analytics_prices_volume.87c79dc605)
+[0m14:17:57.351820 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m14:17:57.352100 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_prices_ingested_at.451dd64efe, now test.crypto_analytics.source_unique_crypto_analytics_news_url_hash.e48008dd53)
+[0m14:17:57.352676 [debug] [Thread-2 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_low.76694e1a2e
+[0m14:17:57.352952 [debug] [Thread-1 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_volume.87c79dc605
+[0m14:17:57.353519 [debug] [Thread-3 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_open.d78e3ebfc8
+[0m14:17:57.353788 [debug] [Thread-4 (]: Began compiling node test.crypto_analytics.source_unique_crypto_analytics_news_url_hash.e48008dd53
+[0m14:17:57.356537 [debug] [Thread-1 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_volume.87c79dc605"
+[0m14:17:57.361803 [debug] [Thread-4 (]: Writing injected SQL for node "test.crypto_analytics.source_unique_crypto_analytics_news_url_hash.e48008dd53"
+[0m14:17:57.362949 [debug] [Thread-4 (]: Began executing node test.crypto_analytics.source_unique_crypto_analytics_news_url_hash.e48008dd53
+[0m14:17:57.363341 [debug] [Thread-1 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_volume.87c79dc605
+[0m14:17:57.363711 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m14:17:57.364028 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:17:57.364827 [debug] [Thread-4 (]: Finished running node test.crypto_analytics.source_unique_crypto_analytics_news_url_hash.e48008dd53
+[0m14:17:57.365501 [debug] [Thread-1 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_volume.87c79dc605
+[0m14:17:57.366818 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:17:57.367163 [debug] [MainThread]: Connection 'test.crypto_analytics.source_not_null_crypto_analytics_prices_volume.87c79dc605' was properly closed.
+[0m14:17:57.367412 [debug] [MainThread]: Connection 'test.crypto_analytics.source_unique_crypto_analytics_news_url_hash.e48008dd53' was properly closed.
+[0m14:17:57.367635 [debug] [MainThread]: Connection 'test.crypto_analytics.source_not_null_crypto_analytics_prices_open.d78e3ebfc8' was properly closed.
+[0m14:17:57.367849 [debug] [MainThread]: Connection 'test.crypto_analytics.source_not_null_crypto_analytics_prices_low.76694e1a2e' was properly closed.
+[0m14:17:57.370194 [debug] [MainThread]: Command end result
+[0m14:17:57.402660 [debug] [MainThread]: Wrote artifact WritableManifest to .\target\manifest.json
+[0m14:17:57.405152 [debug] [MainThread]: Wrote artifact SemanticManifest to .\target\semantic_manifest.json
+[0m14:17:57.411548 [debug] [MainThread]: Wrote artifact RunExecutionResult to .\target\run_results.json
+[0m14:17:57.412548 [debug] [MainThread]: Command `dbt compile` succeeded at 14:17:57.412417 after 2.86 seconds
+[0m14:17:57.412912 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A284C7FF50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A2A9AC6360>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A2A9AC7C20>]}
+[0m14:17:57.413273 [debug] [MainThread]: Flushing usage events
+[0m14:17:57.863725 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:28:30.529460 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025758AD0AD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000257566147D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000257595A4A50>]}
+
+
+============================== 14:28:30.533114 | a5c3b520-a85f-4d4a-9825-d629bbbaa04d ==============================
+[0m14:28:30.533114 [info ] [MainThread]: Running with dbt=1.11.8
+[0m14:28:30.533624 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'c:\\Work\\Crypto-Analysis\\dbt', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt ', 'use_experimental_parser': 'False', 'log_path': 'c:\\Work\\Crypto-Analysis\\dbt\\logs'}
+[0m14:28:30.656165 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a5c3b520-a85f-4d4a-9825-d629bbbaa04d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025758F1ED70>]}
+[0m14:28:30.759970 [debug] [MainThread]: Set downloads directory='C:\Users\jains\AppData\Local\Temp\dbt-downloads-iaen_nc4'
+[0m14:28:30.760451 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m14:28:30.867118 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m14:28:30.868952 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m14:28:30.922359 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m14:28:30.926686 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m14:28:31.476527 [info ] [MainThread]: Installed from version 1.3.3
+[0m14:28:31.476942 [info ] [MainThread]: Up to date!
+[0m14:28:31.477279 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': 'a5c3b520-a85f-4d4a-9825-d629bbbaa04d', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002575AEC6E00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002575AEC4AF0>]}
+[0m14:28:31.478802 [debug] [MainThread]: Command `cli deps` succeeded at 14:28:31.478665 after 1.06 seconds
+[0m14:28:31.479127 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002575AECAA50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000257587DEB70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002575ABE14F0>]}
+[0m14:28:31.479469 [debug] [MainThread]: Flushing usage events
+[0m14:28:31.934512 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:40:46.388395 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D775D197F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D7769BDBD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D77808FED0>]}
+
+
+============================== 18:40:46.393690 | 03c6a493-b8b2-4a21-b19e-653fb915a425 ==============================
+[0m18:40:46.393690 [info ] [MainThread]: Running with dbt=1.11.8
+[0m18:40:46.394279 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': '.', 'invocation_command': 'dbt compile --target dev --profiles-dir . --project-dir .', 'indirect_selection': 'eager', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m18:40:48.111883 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '03c6a493-b8b2-4a21-b19e-653fb915a425', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D7763C5350>]}
+[0m18:40:48.164050 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '03c6a493-b8b2-4a21-b19e-653fb915a425', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D71B7A3DF0>]}
+[0m18:40:48.164739 [info ] [MainThread]: Registered adapter: bigquery=1.11.1
+[0m18:40:48.574207 [debug] [MainThread]: checksum: 205f67941a37c44b34a8b709ae683ccb08f2061b4926cd29bbf893726d03834e, vars: {}, profile: , target: dev, version: 1.11.8
+[0m18:40:48.659401 [info ] [MainThread]: Unable to do partial parsing because config vars, config profile, or config target have changed
+[0m18:40:48.660505 [debug] [MainThread]: previous checksum: 205f67941a37c44b34a8b709ae683ccb08f2061b4926cd29bbf893726d03834e, current checksum: 7d524ac048c2100769df89d592e662e060a73ca564e31bd9c2a37efdfe8d8ab6
+[0m18:40:48.660834 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '03c6a493-b8b2-4a21-b19e-653fb915a425', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D71BC67850>]}
+[0m18:40:48.681554 [warn ] [MainThread]: [[33mWARNING[0m][PropertyMovedToConfigDeprecation]: Deprecated functionality
+Found `loaded_at_field` as a top-level property of `sources[0]` in file
+`models\staging\_sources.yml`. The `loaded_at_field` top-level property should
+be moved into the `config` of `sources[0]`.
+[0m18:40:48.682370 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '03c6a493-b8b2-4a21-b19e-653fb915a425', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D71BA73F20>]}
+[0m18:40:49.775699 [error] [MainThread]: Encountered an error:
+Compilation Error in model stg_crypto_prices (models\staging\stg_crypto_prices.sql)
+  expected token ':', got '}'
+    line 22
+      select * from {{{{ source('crypto_analytics', 'prices') }}}}
+[0m18:40:49.776577 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- PropertyMovedToConfigDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m18:40:49.777758 [debug] [MainThread]: Command `dbt compile` failed at 18:40:49.777656 after 3.50 seconds
+[0m18:40:49.778077 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D77807BE70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D71BCDADD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D71BE0CA10>]}
+[0m18:40:49.778390 [debug] [MainThread]: Flushing usage events
+[0m18:40:50.336643 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:41:15.602254 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000206E49E97F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000206E568DBD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000206E5D8FED0>]}
+
+
+============================== 18:41:15.606248 | 167d1dfd-f897-40b8-a910-f92d5bfe8b19 ==============================
+[0m18:41:15.606248 [info ] [MainThread]: Running with dbt=1.11.8
+[0m18:41:15.606838 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': '.', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt compile --target dev --profiles-dir . --project-dir .', 'indirect_selection': 'eager', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m18:41:16.555151 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '167d1dfd-f897-40b8-a910-f92d5bfe8b19', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000206E5095350>]}
+[0m18:41:16.607788 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '167d1dfd-f897-40b8-a910-f92d5bfe8b19', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002068A563DF0>]}
+[0m18:41:16.608445 [info ] [MainThread]: Registered adapter: bigquery=1.11.1
+[0m18:41:16.935824 [debug] [MainThread]: checksum: 205f67941a37c44b34a8b709ae683ccb08f2061b4926cd29bbf893726d03834e, vars: {}, profile: , target: dev, version: 1.11.8
+[0m18:41:17.021757 [info ] [MainThread]: Unable to do partial parsing because config vars, config profile, or config target have changed
+[0m18:41:17.022510 [debug] [MainThread]: previous checksum: 205f67941a37c44b34a8b709ae683ccb08f2061b4926cd29bbf893726d03834e, current checksum: 7d524ac048c2100769df89d592e662e060a73ca564e31bd9c2a37efdfe8d8ab6
+[0m18:41:17.022911 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '167d1dfd-f897-40b8-a910-f92d5bfe8b19', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002068AA27850>]}
+[0m18:41:17.032055 [warn ] [MainThread]: [[33mWARNING[0m][PropertyMovedToConfigDeprecation]: Deprecated functionality
+Found `loaded_at_field` as a top-level property of `sources[0]` in file
+`models\staging\_sources.yml`. The `loaded_at_field` top-level property should
+be moved into the `config` of `sources[0]`.
+[0m18:41:17.032657 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '167d1dfd-f897-40b8-a910-f92d5bfe8b19', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002068A833F20>]}
+[0m18:41:18.280746 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.crypto_analytics.marts
+- models.crypto_analytics.intermediate
+[0m18:41:18.291134 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '167d1dfd-f897-40b8-a910-f92d5bfe8b19', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002068AABD390>]}
+[0m18:41:18.484277 [debug] [MainThread]: Wrote artifact WritableManifest to .\target\manifest.json
+[0m18:41:18.518522 [debug] [MainThread]: Wrote artifact SemanticManifest to .\target\semantic_manifest.json
+[0m18:41:18.534712 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '167d1dfd-f897-40b8-a910-f92d5bfe8b19', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002068A66D090>]}
+[0m18:41:18.535172 [info ] [MainThread]: Found 1 model, 18 data tests, 2 sources, 655 macros
+[0m18:41:18.535661 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '167d1dfd-f897-40b8-a910-f92d5bfe8b19', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002068B0A8AD0>]}
+[0m18:41:18.538344 [info ] [MainThread]: 
+[0m18:41:18.538722 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m18:41:18.539074 [info ] [MainThread]: 
+[0m18:41:18.539584 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m18:41:18.540478 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_crypto-analytics-2026_crypto_analytics_dev_marts_crypto_staging'
+[0m18:41:18.540803 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:41:21.633479 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '167d1dfd-f897-40b8-a910-f92d5bfe8b19', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002068B06DD30>]}
+[0m18:41:21.633997 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:41:21.639602 [debug] [Thread-3 (]: Began running node test.crypto_analytics.source_accepted_values_crypto_analytics_prices_coin__bitcoin__ethereum__ripple__litecoin__cardano.359abaa8ca
+[0m18:41:21.640011 [debug] [Thread-2 (]: Began running node test.crypto_analytics.source_accepted_values_crypto_analytics_news_sentiment_label__bitcoin__ethereum__ripple__litecoin__cardano.3306a33b60
+[0m18:41:21.640317 [debug] [Thread-4 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_news_coin.e878c055e8
+[0m18:41:21.640630 [debug] [Thread-1 (]: Began running node model.crypto_analytics.stg_crypto_prices
+[0m18:41:21.641100 [debug] [Thread-3 (]: Acquiring new bigquery connection 'test.crypto_analytics.source_accepted_values_crypto_analytics_prices_coin__bitcoin__ethereum__ripple__litecoin__cardano.359abaa8ca'
+[0m18:41:21.642054 [debug] [Thread-4 (]: Acquiring new bigquery connection 'test.crypto_analytics.source_not_null_crypto_analytics_news_coin.e878c055e8'
+[0m18:41:21.643617 [debug] [Thread-2 (]: Acquiring new bigquery connection 'test.crypto_analytics.source_accepted_values_crypto_analytics_news_sentiment_label__bitcoin__ethereum__ripple__litecoin__cardano.3306a33b60'
+[0m18:41:21.644039 [debug] [Thread-1 (]: Acquiring new bigquery connection 'model.crypto_analytics.stg_crypto_prices'
+[0m18:41:21.644419 [debug] [Thread-3 (]: Began compiling node test.crypto_analytics.source_accepted_values_crypto_analytics_prices_coin__bitcoin__ethereum__ripple__litecoin__cardano.359abaa8ca
+[0m18:41:21.644730 [debug] [Thread-4 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_news_coin.e878c055e8
+[0m18:41:21.645043 [debug] [Thread-2 (]: Began compiling node test.crypto_analytics.source_accepted_values_crypto_analytics_news_sentiment_label__bitcoin__ethereum__ripple__litecoin__cardano.3306a33b60
+[0m18:41:21.645350 [debug] [Thread-1 (]: Began compiling node model.crypto_analytics.stg_crypto_prices
+[0m18:41:21.654556 [debug] [Thread-3 (]: Writing injected SQL for node "test.crypto_analytics.source_accepted_values_crypto_analytics_prices_coin__bitcoin__ethereum__ripple__litecoin__cardano.359abaa8ca"
+[0m18:41:21.673392 [debug] [Thread-2 (]: Writing injected SQL for node "test.crypto_analytics.source_accepted_values_crypto_analytics_news_sentiment_label__bitcoin__ethereum__ripple__litecoin__cardano.3306a33b60"
+[0m18:41:21.685309 [debug] [Thread-1 (]: Writing injected SQL for node "model.crypto_analytics.stg_crypto_prices"
+[0m18:41:21.685824 [debug] [Thread-4 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_news_coin.e878c055e8"
+[0m18:41:21.689500 [debug] [Thread-1 (]: Began executing node model.crypto_analytics.stg_crypto_prices
+[0m18:41:21.690410 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m18:41:21.691960 [debug] [Thread-1 (]: Finished running node model.crypto_analytics.stg_crypto_prices
+[0m18:41:21.692620 [debug] [Thread-3 (]: Began executing node test.crypto_analytics.source_accepted_values_crypto_analytics_prices_coin__bitcoin__ethereum__ripple__litecoin__cardano.359abaa8ca
+[0m18:41:21.693192 [debug] [Thread-2 (]: Began executing node test.crypto_analytics.source_accepted_values_crypto_analytics_news_sentiment_label__bitcoin__ethereum__ripple__litecoin__cardano.3306a33b60
+[0m18:41:21.693825 [debug] [Thread-1 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_news_ingested_at.d04ec80d1e
+[0m18:41:21.694560 [debug] [Thread-4 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_news_coin.e878c055e8
+[0m18:41:21.695181 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m18:41:21.695703 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m18:41:21.696333 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.crypto_analytics.stg_crypto_prices, now test.crypto_analytics.source_not_null_crypto_analytics_news_ingested_at.d04ec80d1e)
+[0m18:41:21.696840 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m18:41:21.698100 [debug] [Thread-3 (]: Finished running node test.crypto_analytics.source_accepted_values_crypto_analytics_prices_coin__bitcoin__ethereum__ripple__litecoin__cardano.359abaa8ca
+[0m18:41:21.699374 [debug] [Thread-2 (]: Finished running node test.crypto_analytics.source_accepted_values_crypto_analytics_news_sentiment_label__bitcoin__ethereum__ripple__litecoin__cardano.3306a33b60
+[0m18:41:21.700082 [debug] [Thread-1 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_news_ingested_at.d04ec80d1e
+[0m18:41:21.701545 [debug] [Thread-4 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_news_coin.e878c055e8
+[0m18:41:21.702076 [debug] [Thread-3 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_news_published_at.6d61bae4d6
+[0m18:41:21.702616 [debug] [Thread-2 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_compound.37273993a0
+[0m18:41:21.706309 [debug] [Thread-1 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_news_ingested_at.d04ec80d1e"
+[0m18:41:21.706719 [debug] [Thread-4 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_label.3e7e579bb3
+[0m18:41:21.707121 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_accepted_values_crypto_analytics_prices_coin__bitcoin__ethereum__ripple__litecoin__cardano.359abaa8ca, now test.crypto_analytics.source_not_null_crypto_analytics_news_published_at.6d61bae4d6)
+[0m18:41:21.707513 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_accepted_values_crypto_analytics_news_sentiment_label__bitcoin__ethereum__ripple__litecoin__cardano.3306a33b60, now test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_compound.37273993a0)
+[0m18:41:21.707941 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_news_coin.e878c055e8, now test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_label.3e7e579bb3)
+[0m18:41:21.708287 [debug] [Thread-3 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_news_published_at.6d61bae4d6
+[0m18:41:21.708693 [debug] [Thread-2 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_compound.37273993a0
+[0m18:41:21.709074 [debug] [Thread-4 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_label.3e7e579bb3
+[0m18:41:21.709392 [debug] [Thread-1 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_news_ingested_at.d04ec80d1e
+[0m18:41:21.715189 [debug] [Thread-3 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_news_published_at.6d61bae4d6"
+[0m18:41:21.722793 [debug] [Thread-2 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_compound.37273993a0"
+[0m18:41:21.727307 [debug] [Thread-4 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_label.3e7e579bb3"
+[0m18:41:21.727851 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:41:21.729099 [debug] [Thread-1 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_news_ingested_at.d04ec80d1e
+[0m18:41:21.729512 [debug] [Thread-1 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_news_title.7b74bf7f95
+[0m18:41:21.729976 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_news_ingested_at.d04ec80d1e, now test.crypto_analytics.source_not_null_crypto_analytics_news_title.7b74bf7f95)
+[0m18:41:21.730358 [debug] [Thread-1 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_news_title.7b74bf7f95
+[0m18:41:21.734156 [debug] [Thread-1 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_news_title.7b74bf7f95"
+[0m18:41:21.734818 [debug] [Thread-2 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_compound.37273993a0
+[0m18:41:21.735195 [debug] [Thread-3 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_news_published_at.6d61bae4d6
+[0m18:41:21.735651 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m18:41:21.736077 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m18:41:21.736410 [debug] [Thread-4 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_label.3e7e579bb3
+[0m18:41:21.737283 [debug] [Thread-2 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_compound.37273993a0
+[0m18:41:21.738463 [debug] [Thread-3 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_news_published_at.6d61bae4d6
+[0m18:41:21.738786 [debug] [Thread-1 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_news_title.7b74bf7f95
+[0m18:41:21.739105 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m18:41:21.739493 [debug] [Thread-2 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_news_url_hash.1302b3147d
+[0m18:41:21.739916 [debug] [Thread-3 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_close.b04a3a06b4
+[0m18:41:21.740386 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:41:21.741232 [debug] [Thread-4 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_label.3e7e579bb3
+[0m18:41:21.741594 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_compound.37273993a0, now test.crypto_analytics.source_not_null_crypto_analytics_news_url_hash.1302b3147d)
+[0m18:41:21.741974 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_news_published_at.6d61bae4d6, now test.crypto_analytics.source_not_null_crypto_analytics_prices_close.b04a3a06b4)
+[0m18:41:21.742751 [debug] [Thread-1 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_news_title.7b74bf7f95
+[0m18:41:21.743193 [debug] [Thread-4 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_coin.63ce8cd25c
+[0m18:41:21.743653 [debug] [Thread-2 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_news_url_hash.1302b3147d
+[0m18:41:21.744034 [debug] [Thread-3 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_close.b04a3a06b4
+[0m18:41:21.744379 [debug] [Thread-1 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_date.c839b15569
+[0m18:41:21.744725 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_label.3e7e579bb3, now test.crypto_analytics.source_not_null_crypto_analytics_prices_coin.63ce8cd25c)
+[0m18:41:21.748122 [debug] [Thread-2 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_news_url_hash.1302b3147d"
+[0m18:41:21.752003 [debug] [Thread-3 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_close.b04a3a06b4"
+[0m18:41:21.752484 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_news_title.7b74bf7f95, now test.crypto_analytics.source_not_null_crypto_analytics_prices_date.c839b15569)
+[0m18:41:21.752863 [debug] [Thread-4 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_coin.63ce8cd25c
+[0m18:41:21.753317 [debug] [Thread-1 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_date.c839b15569
+[0m18:41:21.756343 [debug] [Thread-4 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_coin.63ce8cd25c"
+[0m18:41:21.760062 [debug] [Thread-1 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_date.c839b15569"
+[0m18:41:21.760805 [debug] [Thread-2 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_news_url_hash.1302b3147d
+[0m18:41:21.761151 [debug] [Thread-3 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_close.b04a3a06b4
+[0m18:41:21.761571 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m18:41:21.761901 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m18:41:21.762209 [debug] [Thread-4 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_coin.63ce8cd25c
+[0m18:41:21.762927 [debug] [Thread-2 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_news_url_hash.1302b3147d
+[0m18:41:21.763227 [debug] [Thread-1 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_date.c839b15569
+[0m18:41:21.763859 [debug] [Thread-3 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_close.b04a3a06b4
+[0m18:41:21.764172 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m18:41:21.764566 [debug] [Thread-2 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_high.17e77c77d3
+[0m18:41:21.764982 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:41:21.765334 [debug] [Thread-3 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_ingested_at.451dd64efe
+[0m18:41:21.766089 [debug] [Thread-4 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_coin.63ce8cd25c
+[0m18:41:21.766456 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_news_url_hash.1302b3147d, now test.crypto_analytics.source_not_null_crypto_analytics_prices_high.17e77c77d3)
+[0m18:41:21.767168 [debug] [Thread-1 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_date.c839b15569
+[0m18:41:21.767481 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_prices_close.b04a3a06b4, now test.crypto_analytics.source_not_null_crypto_analytics_prices_ingested_at.451dd64efe)
+[0m18:41:21.767825 [debug] [Thread-4 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_low.76694e1a2e
+[0m18:41:21.768182 [debug] [Thread-2 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_high.17e77c77d3
+[0m18:41:21.768539 [debug] [Thread-1 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_open.d78e3ebfc8
+[0m18:41:21.768887 [debug] [Thread-3 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_ingested_at.451dd64efe
+[0m18:41:21.769228 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_prices_coin.63ce8cd25c, now test.crypto_analytics.source_not_null_crypto_analytics_prices_low.76694e1a2e)
+[0m18:41:21.772611 [debug] [Thread-2 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_high.17e77c77d3"
+[0m18:41:21.773504 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_prices_date.c839b15569, now test.crypto_analytics.source_not_null_crypto_analytics_prices_open.d78e3ebfc8)
+[0m18:41:21.778839 [debug] [Thread-3 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_ingested_at.451dd64efe"
+[0m18:41:21.779218 [debug] [Thread-4 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_low.76694e1a2e
+[0m18:41:21.779618 [debug] [Thread-1 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_open.d78e3ebfc8
+[0m18:41:21.783062 [debug] [Thread-4 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_low.76694e1a2e"
+[0m18:41:21.787009 [debug] [Thread-1 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_open.d78e3ebfc8"
+[0m18:41:21.787815 [debug] [Thread-2 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_high.17e77c77d3
+[0m18:41:21.788279 [debug] [Thread-3 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_ingested_at.451dd64efe
+[0m18:41:21.788679 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m18:41:21.789153 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m18:41:21.790031 [debug] [Thread-2 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_high.17e77c77d3
+[0m18:41:21.790399 [debug] [Thread-4 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_low.76694e1a2e
+[0m18:41:21.791086 [debug] [Thread-3 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_ingested_at.451dd64efe
+[0m18:41:21.791482 [debug] [Thread-2 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_volume.87c79dc605
+[0m18:41:21.791818 [debug] [Thread-1 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_open.d78e3ebfc8
+[0m18:41:21.792194 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m18:41:21.792554 [debug] [Thread-3 (]: Began running node test.crypto_analytics.source_unique_crypto_analytics_news_url_hash.e48008dd53
+[0m18:41:21.792955 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_prices_high.17e77c77d3, now test.crypto_analytics.source_not_null_crypto_analytics_prices_volume.87c79dc605)
+[0m18:41:21.793315 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:41:21.793955 [debug] [Thread-4 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_low.76694e1a2e
+[0m18:41:21.794260 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_prices_ingested_at.451dd64efe, now test.crypto_analytics.source_unique_crypto_analytics_news_url_hash.e48008dd53)
+[0m18:41:21.794561 [debug] [Thread-2 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_volume.87c79dc605
+[0m18:41:21.795138 [debug] [Thread-1 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_open.d78e3ebfc8
+[0m18:41:21.795517 [debug] [Thread-3 (]: Began compiling node test.crypto_analytics.source_unique_crypto_analytics_news_url_hash.e48008dd53
+[0m18:41:21.798940 [debug] [Thread-2 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_volume.87c79dc605"
+[0m18:41:21.804586 [debug] [Thread-3 (]: Writing injected SQL for node "test.crypto_analytics.source_unique_crypto_analytics_news_url_hash.e48008dd53"
+[0m18:41:21.807290 [debug] [Thread-3 (]: Began executing node test.crypto_analytics.source_unique_crypto_analytics_news_url_hash.e48008dd53
+[0m18:41:21.807893 [debug] [Thread-2 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_volume.87c79dc605
+[0m18:41:21.808368 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m18:41:21.808713 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m18:41:21.809468 [debug] [Thread-3 (]: Finished running node test.crypto_analytics.source_unique_crypto_analytics_news_url_hash.e48008dd53
+[0m18:41:21.810066 [debug] [Thread-2 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_volume.87c79dc605
+[0m18:41:21.811200 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:41:21.811446 [debug] [MainThread]: Connection 'list_crypto-analytics-2026_crypto_analytics_dev_marts_crypto_staging' was properly closed.
+[0m18:41:21.811666 [debug] [MainThread]: Connection 'test.crypto_analytics.source_unique_crypto_analytics_news_url_hash.e48008dd53' was properly closed.
+[0m18:41:21.811886 [debug] [MainThread]: Connection 'test.crypto_analytics.source_not_null_crypto_analytics_prices_volume.87c79dc605' was properly closed.
+[0m18:41:21.812130 [debug] [MainThread]: Connection 'test.crypto_analytics.source_not_null_crypto_analytics_prices_low.76694e1a2e' was properly closed.
+[0m18:41:21.812333 [debug] [MainThread]: Connection 'test.crypto_analytics.source_not_null_crypto_analytics_prices_open.d78e3ebfc8' was properly closed.
+[0m18:41:21.814514 [debug] [MainThread]: Command end result
+[0m18:41:21.844696 [debug] [MainThread]: Wrote artifact WritableManifest to .\target\manifest.json
+[0m18:41:21.847307 [debug] [MainThread]: Wrote artifact SemanticManifest to .\target\semantic_manifest.json
+[0m18:41:21.853871 [debug] [MainThread]: Wrote artifact RunExecutionResult to .\target\run_results.json
+[0m18:41:21.854443 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- PropertyMovedToConfigDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m18:41:21.855513 [debug] [MainThread]: Command `dbt compile` succeeded at 18:41:21.855395 after 6.36 seconds
+[0m18:41:21.855867 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002068AB54550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002068AEBFB60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002068B09E850>]}
+[0m18:41:21.856175 [debug] [MainThread]: Flushing usage events
+[0m18:41:22.326631 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:42:00.988836 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EB031A97F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EB03E3DBD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EB0550FED0>]}
+
+
+============================== 18:42:00.993009 | 1fdedb52-e89b-43c8-9f17-dfc69663b7aa ==============================
+[0m18:42:00.993009 [info ] [MainThread]: Running with dbt=1.11.8
+[0m18:42:00.993987 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': '.', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt compile --target dev --profiles-dir . --project-dir .', 'indirect_selection': 'eager', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m18:42:01.974174 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '1fdedb52-e89b-43c8-9f17-dfc69663b7aa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EB03861350>]}
+[0m18:42:02.025806 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '1fdedb52-e89b-43c8-9f17-dfc69663b7aa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EB28B43DF0>]}
+[0m18:42:02.026457 [info ] [MainThread]: Registered adapter: bigquery=1.11.1
+[0m18:42:02.359810 [debug] [MainThread]: checksum: 205f67941a37c44b34a8b709ae683ccb08f2061b4926cd29bbf893726d03834e, vars: {}, profile: , target: dev, version: 1.11.8
+[0m18:42:02.511018 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m18:42:02.511917 [debug] [MainThread]: Partial parsing: updated file: crypto_analytics://models\staging\_sources.yml
+[0m18:42:02.981084 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.crypto_analytics.marts
+- models.crypto_analytics.intermediate
+[0m18:42:02.992585 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '1fdedb52-e89b-43c8-9f17-dfc69663b7aa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EB29006350>]}
+[0m18:42:03.083301 [debug] [MainThread]: Wrote artifact WritableManifest to .\target\manifest.json
+[0m18:42:03.086307 [debug] [MainThread]: Wrote artifact SemanticManifest to .\target\semantic_manifest.json
+[0m18:42:03.100192 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '1fdedb52-e89b-43c8-9f17-dfc69663b7aa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EB29442B70>]}
+[0m18:42:03.100894 [info ] [MainThread]: Found 1 model, 18 data tests, 2 sources, 655 macros
+[0m18:42:03.101329 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1fdedb52-e89b-43c8-9f17-dfc69663b7aa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EB29671C50>]}
+[0m18:42:03.104145 [info ] [MainThread]: 
+[0m18:42:03.104569 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m18:42:03.104862 [info ] [MainThread]: 
+[0m18:42:03.105332 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m18:42:03.106251 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_crypto-analytics-2026_crypto_analytics_dev_marts_crypto_staging'
+[0m18:42:03.106618 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:42:05.033670 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1fdedb52-e89b-43c8-9f17-dfc69663b7aa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EB29131E60>]}
+[0m18:42:05.034281 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:42:05.038556 [debug] [Thread-1 (]: Began running node model.crypto_analytics.stg_crypto_prices
+[0m18:42:05.039016 [debug] [Thread-3 (]: Began running node test.crypto_analytics.source_accepted_values_crypto_analytics_prices_coin__bitcoin__ethereum__ripple__litecoin__cardano.359abaa8ca
+[0m18:42:05.039359 [debug] [Thread-4 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_news_coin.e878c055e8
+[0m18:42:05.039690 [debug] [Thread-2 (]: Began running node test.crypto_analytics.source_accepted_values_crypto_analytics_news_sentiment_label__bitcoin__ethereum__ripple__litecoin__cardano.3306a33b60
+[0m18:42:05.040182 [debug] [Thread-1 (]: Acquiring new bigquery connection 'model.crypto_analytics.stg_crypto_prices'
+[0m18:42:05.040570 [debug] [Thread-3 (]: Acquiring new bigquery connection 'test.crypto_analytics.source_accepted_values_crypto_analytics_prices_coin__bitcoin__ethereum__ripple__litecoin__cardano.359abaa8ca'
+[0m18:42:05.040939 [debug] [Thread-4 (]: Acquiring new bigquery connection 'test.crypto_analytics.source_not_null_crypto_analytics_news_coin.e878c055e8'
+[0m18:42:05.041356 [debug] [Thread-2 (]: Acquiring new bigquery connection 'test.crypto_analytics.source_accepted_values_crypto_analytics_news_sentiment_label__bitcoin__ethereum__ripple__litecoin__cardano.3306a33b60'
+[0m18:42:05.041704 [debug] [Thread-1 (]: Began compiling node model.crypto_analytics.stg_crypto_prices
+[0m18:42:05.042022 [debug] [Thread-3 (]: Began compiling node test.crypto_analytics.source_accepted_values_crypto_analytics_prices_coin__bitcoin__ethereum__ripple__litecoin__cardano.359abaa8ca
+[0m18:42:05.042322 [debug] [Thread-4 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_news_coin.e878c055e8
+[0m18:42:05.042723 [debug] [Thread-2 (]: Began compiling node test.crypto_analytics.source_accepted_values_crypto_analytics_news_sentiment_label__bitcoin__ethereum__ripple__litecoin__cardano.3306a33b60
+[0m18:42:05.054584 [debug] [Thread-3 (]: Writing injected SQL for node "test.crypto_analytics.source_accepted_values_crypto_analytics_prices_coin__bitcoin__ethereum__ripple__litecoin__cardano.359abaa8ca"
+[0m18:42:05.056593 [debug] [Thread-1 (]: Writing injected SQL for node "model.crypto_analytics.stg_crypto_prices"
+[0m18:42:05.063263 [debug] [Thread-4 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_news_coin.e878c055e8"
+[0m18:42:05.067094 [debug] [Thread-2 (]: Writing injected SQL for node "test.crypto_analytics.source_accepted_values_crypto_analytics_news_sentiment_label__bitcoin__ethereum__ripple__litecoin__cardano.3306a33b60"
+[0m18:42:05.068574 [debug] [Thread-1 (]: Began executing node model.crypto_analytics.stg_crypto_prices
+[0m18:42:05.069043 [debug] [Thread-3 (]: Began executing node test.crypto_analytics.source_accepted_values_crypto_analytics_prices_coin__bitcoin__ethereum__ripple__litecoin__cardano.359abaa8ca
+[0m18:42:05.069401 [debug] [Thread-4 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_news_coin.e878c055e8
+[0m18:42:05.069736 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m18:42:05.070041 [debug] [Thread-2 (]: Began executing node test.crypto_analytics.source_accepted_values_crypto_analytics_news_sentiment_label__bitcoin__ethereum__ripple__litecoin__cardano.3306a33b60
+[0m18:42:05.070360 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m18:42:05.070678 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m18:42:05.071483 [debug] [Thread-1 (]: Finished running node model.crypto_analytics.stg_crypto_prices
+[0m18:42:05.071801 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m18:42:05.072449 [debug] [Thread-3 (]: Finished running node test.crypto_analytics.source_accepted_values_crypto_analytics_prices_coin__bitcoin__ethereum__ripple__litecoin__cardano.359abaa8ca
+[0m18:42:05.073058 [debug] [Thread-4 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_news_coin.e878c055e8
+[0m18:42:05.073453 [debug] [Thread-1 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_news_ingested_at.d04ec80d1e
+[0m18:42:05.074174 [debug] [Thread-2 (]: Finished running node test.crypto_analytics.source_accepted_values_crypto_analytics_news_sentiment_label__bitcoin__ethereum__ripple__litecoin__cardano.3306a33b60
+[0m18:42:05.074544 [debug] [Thread-3 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_news_published_at.6d61bae4d6
+[0m18:42:05.074978 [debug] [Thread-4 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_compound.37273993a0
+[0m18:42:05.075347 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.crypto_analytics.stg_crypto_prices, now test.crypto_analytics.source_not_null_crypto_analytics_news_ingested_at.d04ec80d1e)
+[0m18:42:05.075708 [debug] [Thread-2 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_label.3e7e579bb3
+[0m18:42:05.076108 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_accepted_values_crypto_analytics_prices_coin__bitcoin__ethereum__ripple__litecoin__cardano.359abaa8ca, now test.crypto_analytics.source_not_null_crypto_analytics_news_published_at.6d61bae4d6)
+[0m18:42:05.076447 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_news_coin.e878c055e8, now test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_compound.37273993a0)
+[0m18:42:05.076760 [debug] [Thread-1 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_news_ingested_at.d04ec80d1e
+[0m18:42:05.077078 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_accepted_values_crypto_analytics_news_sentiment_label__bitcoin__ethereum__ripple__litecoin__cardano.3306a33b60, now test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_label.3e7e579bb3)
+[0m18:42:05.077394 [debug] [Thread-3 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_news_published_at.6d61bae4d6
+[0m18:42:05.077690 [debug] [Thread-4 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_compound.37273993a0
+[0m18:42:05.081581 [debug] [Thread-1 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_news_ingested_at.d04ec80d1e"
+[0m18:42:05.082101 [debug] [Thread-2 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_label.3e7e579bb3
+[0m18:42:05.085486 [debug] [Thread-3 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_news_published_at.6d61bae4d6"
+[0m18:42:05.088940 [debug] [Thread-4 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_compound.37273993a0"
+[0m18:42:05.092518 [debug] [Thread-2 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_label.3e7e579bb3"
+[0m18:42:05.093389 [debug] [Thread-1 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_news_ingested_at.d04ec80d1e
+[0m18:42:05.093822 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:42:05.094247 [debug] [Thread-3 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_news_published_at.6d61bae4d6
+[0m18:42:05.095200 [debug] [Thread-1 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_news_ingested_at.d04ec80d1e
+[0m18:42:05.095640 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m18:42:05.096096 [debug] [Thread-1 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_news_title.7b74bf7f95
+[0m18:42:05.096476 [debug] [Thread-4 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_compound.37273993a0
+[0m18:42:05.096832 [debug] [Thread-2 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_label.3e7e579bb3
+[0m18:42:05.097666 [debug] [Thread-3 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_news_published_at.6d61bae4d6
+[0m18:42:05.098041 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_news_ingested_at.d04ec80d1e, now test.crypto_analytics.source_not_null_crypto_analytics_news_title.7b74bf7f95)
+[0m18:42:05.098444 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m18:42:05.098844 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m18:42:05.099255 [debug] [Thread-3 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_news_url_hash.1302b3147d
+[0m18:42:05.099642 [debug] [Thread-1 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_news_title.7b74bf7f95
+[0m18:42:05.100427 [debug] [Thread-4 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_compound.37273993a0
+[0m18:42:05.101089 [debug] [Thread-2 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_label.3e7e579bb3
+[0m18:42:05.101529 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_news_published_at.6d61bae4d6, now test.crypto_analytics.source_not_null_crypto_analytics_news_url_hash.1302b3147d)
+[0m18:42:05.105371 [debug] [Thread-1 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_news_title.7b74bf7f95"
+[0m18:42:05.105866 [debug] [Thread-4 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_close.b04a3a06b4
+[0m18:42:05.106351 [debug] [Thread-2 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_coin.63ce8cd25c
+[0m18:42:05.106779 [debug] [Thread-3 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_news_url_hash.1302b3147d
+[0m18:42:05.107271 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_compound.37273993a0, now test.crypto_analytics.source_not_null_crypto_analytics_prices_close.b04a3a06b4)
+[0m18:42:05.107605 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_label.3e7e579bb3, now test.crypto_analytics.source_not_null_crypto_analytics_prices_coin.63ce8cd25c)
+[0m18:42:05.110805 [debug] [Thread-3 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_news_url_hash.1302b3147d"
+[0m18:42:05.111241 [debug] [Thread-4 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_close.b04a3a06b4
+[0m18:42:05.111642 [debug] [Thread-2 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_coin.63ce8cd25c
+[0m18:42:05.112019 [debug] [Thread-1 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_news_title.7b74bf7f95
+[0m18:42:05.116212 [debug] [Thread-4 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_close.b04a3a06b4"
+[0m18:42:05.120041 [debug] [Thread-2 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_coin.63ce8cd25c"
+[0m18:42:05.120532 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:42:05.121012 [debug] [Thread-3 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_news_url_hash.1302b3147d
+[0m18:42:05.121785 [debug] [Thread-1 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_news_title.7b74bf7f95
+[0m18:42:05.122158 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m18:42:05.122574 [debug] [Thread-1 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_date.c839b15569
+[0m18:42:05.123009 [debug] [Thread-4 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_close.b04a3a06b4
+[0m18:42:05.123810 [debug] [Thread-3 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_news_url_hash.1302b3147d
+[0m18:42:05.124180 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_news_title.7b74bf7f95, now test.crypto_analytics.source_not_null_crypto_analytics_prices_date.c839b15569)
+[0m18:42:05.124528 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m18:42:05.124892 [debug] [Thread-2 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_coin.63ce8cd25c
+[0m18:42:05.125338 [debug] [Thread-3 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_high.17e77c77d3
+[0m18:42:05.125846 [debug] [Thread-1 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_date.c839b15569
+[0m18:42:05.126645 [debug] [Thread-4 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_close.b04a3a06b4
+[0m18:42:05.127034 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m18:42:05.127424 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_news_url_hash.1302b3147d, now test.crypto_analytics.source_not_null_crypto_analytics_prices_high.17e77c77d3)
+[0m18:42:05.131193 [debug] [Thread-1 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_date.c839b15569"
+[0m18:42:05.131672 [debug] [Thread-4 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_ingested_at.451dd64efe
+[0m18:42:05.132755 [debug] [Thread-2 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_coin.63ce8cd25c
+[0m18:42:05.133161 [debug] [Thread-3 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_high.17e77c77d3
+[0m18:42:05.133686 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_prices_close.b04a3a06b4, now test.crypto_analytics.source_not_null_crypto_analytics_prices_ingested_at.451dd64efe)
+[0m18:42:05.134103 [debug] [Thread-2 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_low.76694e1a2e
+[0m18:42:05.137746 [debug] [Thread-3 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_high.17e77c77d3"
+[0m18:42:05.138228 [debug] [Thread-4 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_ingested_at.451dd64efe
+[0m18:42:05.138690 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_prices_coin.63ce8cd25c, now test.crypto_analytics.source_not_null_crypto_analytics_prices_low.76694e1a2e)
+[0m18:42:05.139113 [debug] [Thread-1 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_date.c839b15569
+[0m18:42:05.142796 [debug] [Thread-4 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_ingested_at.451dd64efe"
+[0m18:42:05.143264 [debug] [Thread-2 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_low.76694e1a2e
+[0m18:42:05.143686 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:42:05.144001 [debug] [Thread-3 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_high.17e77c77d3
+[0m18:42:05.147399 [debug] [Thread-2 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_low.76694e1a2e"
+[0m18:42:05.148322 [debug] [Thread-1 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_date.c839b15569
+[0m18:42:05.148809 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m18:42:05.149495 [debug] [Thread-1 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_open.d78e3ebfc8
+[0m18:42:05.149981 [debug] [Thread-4 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_ingested_at.451dd64efe
+[0m18:42:05.151060 [debug] [Thread-3 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_high.17e77c77d3
+[0m18:42:05.151545 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_prices_date.c839b15569, now test.crypto_analytics.source_not_null_crypto_analytics_prices_open.d78e3ebfc8)
+[0m18:42:05.152050 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m18:42:05.152503 [debug] [Thread-3 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_volume.87c79dc605
+[0m18:42:05.152881 [debug] [Thread-2 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_low.76694e1a2e
+[0m18:42:05.153362 [debug] [Thread-1 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_open.d78e3ebfc8
+[0m18:42:05.154912 [debug] [Thread-4 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_ingested_at.451dd64efe
+[0m18:42:05.155308 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_prices_high.17e77c77d3, now test.crypto_analytics.source_not_null_crypto_analytics_prices_volume.87c79dc605)
+[0m18:42:05.155647 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m18:42:05.158845 [debug] [Thread-1 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_open.d78e3ebfc8"
+[0m18:42:05.159303 [debug] [Thread-4 (]: Began running node test.crypto_analytics.source_unique_crypto_analytics_news_url_hash.e48008dd53
+[0m18:42:05.159756 [debug] [Thread-3 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_volume.87c79dc605
+[0m18:42:05.160534 [debug] [Thread-2 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_low.76694e1a2e
+[0m18:42:05.160931 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_prices_ingested_at.451dd64efe, now test.crypto_analytics.source_unique_crypto_analytics_news_url_hash.e48008dd53)
+[0m18:42:05.164440 [debug] [Thread-3 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_volume.87c79dc605"
+[0m18:42:05.165026 [debug] [Thread-4 (]: Began compiling node test.crypto_analytics.source_unique_crypto_analytics_news_url_hash.e48008dd53
+[0m18:42:05.170833 [debug] [Thread-4 (]: Writing injected SQL for node "test.crypto_analytics.source_unique_crypto_analytics_news_url_hash.e48008dd53"
+[0m18:42:05.171360 [debug] [Thread-1 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_open.d78e3ebfc8
+[0m18:42:05.171816 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:42:05.172598 [debug] [Thread-1 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_open.d78e3ebfc8
+[0m18:42:05.173168 [debug] [Thread-3 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_volume.87c79dc605
+[0m18:42:05.173505 [debug] [Thread-4 (]: Began executing node test.crypto_analytics.source_unique_crypto_analytics_news_url_hash.e48008dd53
+[0m18:42:05.173871 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m18:42:05.174252 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m18:42:05.175139 [debug] [Thread-3 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_volume.87c79dc605
+[0m18:42:05.175916 [debug] [Thread-4 (]: Finished running node test.crypto_analytics.source_unique_crypto_analytics_news_url_hash.e48008dd53
+[0m18:42:05.177139 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:42:05.177456 [debug] [MainThread]: Connection 'list_crypto-analytics-2026_crypto_analytics_dev_marts_crypto_staging' was properly closed.
+[0m18:42:05.177692 [debug] [MainThread]: Connection 'test.crypto_analytics.source_not_null_crypto_analytics_prices_open.d78e3ebfc8' was properly closed.
+[0m18:42:05.177918 [debug] [MainThread]: Connection 'test.crypto_analytics.source_not_null_crypto_analytics_prices_volume.87c79dc605' was properly closed.
+[0m18:42:05.178134 [debug] [MainThread]: Connection 'test.crypto_analytics.source_unique_crypto_analytics_news_url_hash.e48008dd53' was properly closed.
+[0m18:42:05.178345 [debug] [MainThread]: Connection 'test.crypto_analytics.source_not_null_crypto_analytics_prices_low.76694e1a2e' was properly closed.
+[0m18:42:05.180719 [debug] [MainThread]: Command end result
+[0m18:42:05.220787 [debug] [MainThread]: Wrote artifact WritableManifest to .\target\manifest.json
+[0m18:42:05.223821 [debug] [MainThread]: Wrote artifact SemanticManifest to .\target\semantic_manifest.json
+[0m18:42:05.230567 [debug] [MainThread]: Wrote artifact RunExecutionResult to .\target\run_results.json
+[0m18:42:05.231735 [debug] [MainThread]: Command `dbt compile` succeeded at 18:42:05.231581 after 4.35 seconds
+[0m18:42:05.232183 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EB0425FF50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EB2934B3E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EB2934A570>]}
+[0m18:42:05.232587 [debug] [MainThread]: Flushing usage events
+[0m18:42:05.681108 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:56:08.409772 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000159DB7297F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000159DC3BDBD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000159DDA8FED0>]}
+
+
+============================== 18:56:08.414295 | 700688e8-a77b-4717-8a25-20799e05110a ==============================
+[0m18:56:08.414295 [info ] [MainThread]: Running with dbt=1.11.8
+[0m18:56:08.414888 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': '.', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt compile --target dev --profiles-dir . --project-dir .', 'indirect_selection': 'eager', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m18:56:09.358212 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '700688e8-a77b-4717-8a25-20799e05110a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000159DBDE1350>]}
+[0m18:56:09.414437 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '700688e8-a77b-4717-8a25-20799e05110a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000159810A3DF0>]}
+[0m18:56:09.415115 [info ] [MainThread]: Registered adapter: bigquery=1.11.1
+[0m18:56:09.769786 [debug] [MainThread]: checksum: 205f67941a37c44b34a8b709ae683ccb08f2061b4926cd29bbf893726d03834e, vars: {}, profile: , target: dev, version: 1.11.8
+[0m18:56:09.857540 [info ] [MainThread]: Unable to do partial parsing because config vars, config profile, or config target have changed
+[0m18:56:09.858359 [debug] [MainThread]: previous checksum: 205f67941a37c44b34a8b709ae683ccb08f2061b4926cd29bbf893726d03834e, current checksum: 7d524ac048c2100769df89d592e662e060a73ca564e31bd9c2a37efdfe8d8ab6
+[0m18:56:09.858706 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '700688e8-a77b-4717-8a25-20799e05110a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015981563850>]}
+[0m18:56:11.292472 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.crypto_analytics.intermediate
+- models.crypto_analytics.marts
+[0m18:56:11.303156 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '700688e8-a77b-4717-8a25-20799e05110a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000159816DFB60>]}
+[0m18:56:11.493551 [debug] [MainThread]: Wrote artifact WritableManifest to .\target\manifest.json
+[0m18:56:11.496173 [debug] [MainThread]: Wrote artifact SemanticManifest to .\target\semantic_manifest.json
+[0m18:56:11.507844 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '700688e8-a77b-4717-8a25-20799e05110a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000159819D5B70>]}
+[0m18:56:11.508297 [info ] [MainThread]: Found 2 models, 18 data tests, 2 sources, 655 macros
+[0m18:56:11.508700 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '700688e8-a77b-4717-8a25-20799e05110a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015981866D00>]}
+[0m18:56:11.511023 [info ] [MainThread]: 
+[0m18:56:11.511416 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m18:56:11.511768 [info ] [MainThread]: 
+[0m18:56:11.512303 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m18:56:11.516119 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_crypto-analytics-2026_crypto_analytics_dev_marts_crypto_staging'
+[0m18:56:11.516552 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:56:13.544848 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '700688e8-a77b-4717-8a25-20799e05110a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015981BE6510>]}
+[0m18:56:13.545478 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:56:13.550003 [debug] [Thread-2 (]: Began running node model.crypto_analytics.stg_crypto_prices
+[0m18:56:13.550527 [debug] [Thread-3 (]: Began running node test.crypto_analytics.source_accepted_values_crypto_analytics_news_sentiment_label__bitcoin__ethereum__ripple__litecoin__cardano.3306a33b60
+[0m18:56:13.550986 [debug] [Thread-4 (]: Began running node test.crypto_analytics.source_accepted_values_crypto_analytics_prices_coin__bitcoin__ethereum__ripple__litecoin__cardano.359abaa8ca
+[0m18:56:13.551417 [debug] [Thread-1 (]: Began running node model.crypto_analytics.stag_cryto_news
+[0m18:56:13.552367 [debug] [Thread-3 (]: Acquiring new bigquery connection 'test.crypto_analytics.source_accepted_values_crypto_analytics_news_sentiment_label__bitcoin__ethereum__ripple__litecoin__cardano.3306a33b60'
+[0m18:56:13.553873 [debug] [Thread-2 (]: Acquiring new bigquery connection 'model.crypto_analytics.stg_crypto_prices'
+[0m18:56:13.554513 [debug] [Thread-4 (]: Acquiring new bigquery connection 'test.crypto_analytics.source_accepted_values_crypto_analytics_prices_coin__bitcoin__ethereum__ripple__litecoin__cardano.359abaa8ca'
+[0m18:56:13.555439 [debug] [Thread-1 (]: Acquiring new bigquery connection 'model.crypto_analytics.stag_cryto_news'
+[0m18:56:13.555885 [debug] [Thread-3 (]: Began compiling node test.crypto_analytics.source_accepted_values_crypto_analytics_news_sentiment_label__bitcoin__ethereum__ripple__litecoin__cardano.3306a33b60
+[0m18:56:13.556350 [debug] [Thread-2 (]: Began compiling node model.crypto_analytics.stg_crypto_prices
+[0m18:56:13.556752 [debug] [Thread-4 (]: Began compiling node test.crypto_analytics.source_accepted_values_crypto_analytics_prices_coin__bitcoin__ethereum__ripple__litecoin__cardano.359abaa8ca
+[0m18:56:13.557129 [debug] [Thread-1 (]: Began compiling node model.crypto_analytics.stag_cryto_news
+[0m18:56:13.564784 [debug] [Thread-3 (]: Writing injected SQL for node "test.crypto_analytics.source_accepted_values_crypto_analytics_news_sentiment_label__bitcoin__ethereum__ripple__litecoin__cardano.3306a33b60"
+[0m18:56:13.568821 [debug] [Thread-2 (]: Writing injected SQL for node "model.crypto_analytics.stg_crypto_prices"
+[0m18:56:13.572554 [debug] [Thread-4 (]: Writing injected SQL for node "test.crypto_analytics.source_accepted_values_crypto_analytics_prices_coin__bitcoin__ethereum__ripple__litecoin__cardano.359abaa8ca"
+[0m18:56:13.575815 [debug] [Thread-1 (]: Writing injected SQL for node "model.crypto_analytics.stag_cryto_news"
+[0m18:56:13.577063 [debug] [Thread-2 (]: Began executing node model.crypto_analytics.stg_crypto_prices
+[0m18:56:13.577490 [debug] [Thread-3 (]: Began executing node test.crypto_analytics.source_accepted_values_crypto_analytics_news_sentiment_label__bitcoin__ethereum__ripple__litecoin__cardano.3306a33b60
+[0m18:56:13.577945 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m18:56:13.578291 [debug] [Thread-4 (]: Began executing node test.crypto_analytics.source_accepted_values_crypto_analytics_prices_coin__bitcoin__ethereum__ripple__litecoin__cardano.359abaa8ca
+[0m18:56:13.578585 [debug] [Thread-1 (]: Began executing node model.crypto_analytics.stag_cryto_news
+[0m18:56:13.578868 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m18:56:13.579619 [debug] [Thread-2 (]: Finished running node model.crypto_analytics.stg_crypto_prices
+[0m18:56:13.579916 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m18:56:13.580208 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m18:56:13.580799 [debug] [Thread-3 (]: Finished running node test.crypto_analytics.source_accepted_values_crypto_analytics_news_sentiment_label__bitcoin__ethereum__ripple__litecoin__cardano.3306a33b60
+[0m18:56:13.581119 [debug] [Thread-2 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_news_coin.e878c055e8
+[0m18:56:13.581832 [debug] [Thread-4 (]: Finished running node test.crypto_analytics.source_accepted_values_crypto_analytics_prices_coin__bitcoin__ethereum__ripple__litecoin__cardano.359abaa8ca
+[0m18:56:13.582444 [debug] [Thread-1 (]: Finished running node model.crypto_analytics.stag_cryto_news
+[0m18:56:13.582752 [debug] [Thread-3 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_news_ingested_at.d04ec80d1e
+[0m18:56:13.583095 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.crypto_analytics.stg_crypto_prices, now test.crypto_analytics.source_not_null_crypto_analytics_news_coin.e878c055e8)
+[0m18:56:13.583425 [debug] [Thread-4 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_news_published_at.6d61bae4d6
+[0m18:56:13.583766 [debug] [Thread-1 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_compound.37273993a0
+[0m18:56:13.584078 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_accepted_values_crypto_analytics_news_sentiment_label__bitcoin__ethereum__ripple__litecoin__cardano.3306a33b60, now test.crypto_analytics.source_not_null_crypto_analytics_news_ingested_at.d04ec80d1e)
+[0m18:56:13.584414 [debug] [Thread-2 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_news_coin.e878c055e8
+[0m18:56:13.584728 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_accepted_values_crypto_analytics_prices_coin__bitcoin__ethereum__ripple__litecoin__cardano.359abaa8ca, now test.crypto_analytics.source_not_null_crypto_analytics_news_published_at.6d61bae4d6)
+[0m18:56:13.585062 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.crypto_analytics.stag_cryto_news, now test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_compound.37273993a0)
+[0m18:56:13.585398 [debug] [Thread-3 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_news_ingested_at.d04ec80d1e
+[0m18:56:13.591739 [debug] [Thread-2 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_news_coin.e878c055e8"
+[0m18:56:13.592115 [debug] [Thread-4 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_news_published_at.6d61bae4d6
+[0m18:56:13.592454 [debug] [Thread-1 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_compound.37273993a0
+[0m18:56:13.595637 [debug] [Thread-3 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_news_ingested_at.d04ec80d1e"
+[0m18:56:13.598310 [debug] [Thread-4 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_news_published_at.6d61bae4d6"
+[0m18:56:13.601160 [debug] [Thread-1 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_compound.37273993a0"
+[0m18:56:13.601958 [debug] [Thread-2 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_news_coin.e878c055e8
+[0m18:56:13.602364 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m18:56:13.603084 [debug] [Thread-2 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_news_coin.e878c055e8
+[0m18:56:13.603427 [debug] [Thread-3 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_news_ingested_at.d04ec80d1e
+[0m18:56:13.603806 [debug] [Thread-2 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_label.3e7e579bb3
+[0m18:56:13.604212 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m18:56:13.604580 [debug] [Thread-4 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_news_published_at.6d61bae4d6
+[0m18:56:13.604951 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_news_coin.e878c055e8, now test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_label.3e7e579bb3)
+[0m18:56:13.605639 [debug] [Thread-3 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_news_ingested_at.d04ec80d1e
+[0m18:56:13.605930 [debug] [Thread-1 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_compound.37273993a0
+[0m18:56:13.606209 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m18:56:13.606520 [debug] [Thread-2 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_label.3e7e579bb3
+[0m18:56:13.606841 [debug] [Thread-3 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_news_title.7b74bf7f95
+[0m18:56:13.607173 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:56:13.607763 [debug] [Thread-4 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_news_published_at.6d61bae4d6
+[0m18:56:13.611503 [debug] [Thread-2 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_label.3e7e579bb3"
+[0m18:56:13.611880 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_news_ingested_at.d04ec80d1e, now test.crypto_analytics.source_not_null_crypto_analytics_news_title.7b74bf7f95)
+[0m18:56:13.612522 [debug] [Thread-1 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_compound.37273993a0
+[0m18:56:13.612830 [debug] [Thread-4 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_news_url_hash.1302b3147d
+[0m18:56:13.613273 [debug] [Thread-3 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_news_title.7b74bf7f95
+[0m18:56:13.613649 [debug] [Thread-1 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_close.b04a3a06b4
+[0m18:56:13.613996 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_news_published_at.6d61bae4d6, now test.crypto_analytics.source_not_null_crypto_analytics_news_url_hash.1302b3147d)
+[0m18:56:13.616686 [debug] [Thread-3 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_news_title.7b74bf7f95"
+[0m18:56:13.617048 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_compound.37273993a0, now test.crypto_analytics.source_not_null_crypto_analytics_prices_close.b04a3a06b4)
+[0m18:56:13.617417 [debug] [Thread-2 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_label.3e7e579bb3
+[0m18:56:13.617709 [debug] [Thread-4 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_news_url_hash.1302b3147d
+[0m18:56:13.618259 [debug] [Thread-1 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_close.b04a3a06b4
+[0m18:56:13.618643 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m18:56:13.621798 [debug] [Thread-4 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_news_url_hash.1302b3147d"
+[0m18:56:13.624453 [debug] [Thread-1 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_close.b04a3a06b4"
+[0m18:56:13.625163 [debug] [Thread-2 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_label.3e7e579bb3
+[0m18:56:13.625421 [debug] [Thread-3 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_news_title.7b74bf7f95
+[0m18:56:13.625996 [debug] [Thread-2 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_coin.63ce8cd25c
+[0m18:56:13.626462 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m18:56:13.626861 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_news_sentiment_label.3e7e579bb3, now test.crypto_analytics.source_not_null_crypto_analytics_prices_coin.63ce8cd25c)
+[0m18:56:13.627523 [debug] [Thread-3 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_news_title.7b74bf7f95
+[0m18:56:13.627838 [debug] [Thread-4 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_news_url_hash.1302b3147d
+[0m18:56:13.628174 [debug] [Thread-1 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_close.b04a3a06b4
+[0m18:56:13.628501 [debug] [Thread-2 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_coin.63ce8cd25c
+[0m18:56:13.628849 [debug] [Thread-3 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_date.c839b15569
+[0m18:56:13.629204 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m18:56:13.629539 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:56:13.632534 [debug] [Thread-2 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_coin.63ce8cd25c"
+[0m18:56:13.632886 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_news_title.7b74bf7f95, now test.crypto_analytics.source_not_null_crypto_analytics_prices_date.c839b15569)
+[0m18:56:13.633540 [debug] [Thread-4 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_news_url_hash.1302b3147d
+[0m18:56:13.634149 [debug] [Thread-1 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_close.b04a3a06b4
+[0m18:56:13.634504 [debug] [Thread-3 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_date.c839b15569
+[0m18:56:13.634828 [debug] [Thread-4 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_high.17e77c77d3
+[0m18:56:13.635202 [debug] [Thread-1 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_ingested_at.451dd64efe
+[0m18:56:13.635499 [debug] [Thread-2 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_coin.63ce8cd25c
+[0m18:56:13.638271 [debug] [Thread-3 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_date.c839b15569"
+[0m18:56:13.638658 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_news_url_hash.1302b3147d, now test.crypto_analytics.source_not_null_crypto_analytics_prices_high.17e77c77d3)
+[0m18:56:13.639020 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_prices_close.b04a3a06b4, now test.crypto_analytics.source_not_null_crypto_analytics_prices_ingested_at.451dd64efe)
+[0m18:56:13.639363 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m18:56:13.639762 [debug] [Thread-4 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_high.17e77c77d3
+[0m18:56:13.640060 [debug] [Thread-1 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_ingested_at.451dd64efe
+[0m18:56:13.640696 [debug] [Thread-2 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_coin.63ce8cd25c
+[0m18:56:13.645493 [debug] [Thread-4 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_high.17e77c77d3"
+[0m18:56:13.648142 [debug] [Thread-1 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_ingested_at.451dd64efe"
+[0m18:56:13.648487 [debug] [Thread-3 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_date.c839b15569
+[0m18:56:13.648821 [debug] [Thread-2 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_low.76694e1a2e
+[0m18:56:13.649851 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m18:56:13.650212 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_prices_coin.63ce8cd25c, now test.crypto_analytics.source_not_null_crypto_analytics_prices_low.76694e1a2e)
+[0m18:56:13.650907 [debug] [Thread-3 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_date.c839b15569
+[0m18:56:13.651240 [debug] [Thread-2 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_low.76694e1a2e
+[0m18:56:13.651598 [debug] [Thread-3 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_open.d78e3ebfc8
+[0m18:56:13.652013 [debug] [Thread-1 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_ingested_at.451dd64efe
+[0m18:56:13.652310 [debug] [Thread-4 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_high.17e77c77d3
+[0m18:56:13.655484 [debug] [Thread-2 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_low.76694e1a2e"
+[0m18:56:13.655844 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_prices_date.c839b15569, now test.crypto_analytics.source_not_null_crypto_analytics_prices_open.d78e3ebfc8)
+[0m18:56:13.656168 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:56:13.656487 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m18:56:13.656884 [debug] [Thread-3 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_open.d78e3ebfc8
+[0m18:56:13.657654 [debug] [Thread-1 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_ingested_at.451dd64efe
+[0m18:56:13.658251 [debug] [Thread-4 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_high.17e77c77d3
+[0m18:56:13.661203 [debug] [Thread-3 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_open.d78e3ebfc8"
+[0m18:56:13.661589 [debug] [Thread-1 (]: Began running node test.crypto_analytics.source_not_null_crypto_analytics_prices_volume.87c79dc605
+[0m18:56:13.661969 [debug] [Thread-2 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_low.76694e1a2e
+[0m18:56:13.662348 [debug] [Thread-4 (]: Began running node test.crypto_analytics.source_unique_crypto_analytics_news_url_hash.e48008dd53
+[0m18:56:13.662789 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_prices_ingested_at.451dd64efe, now test.crypto_analytics.source_not_null_crypto_analytics_prices_volume.87c79dc605)
+[0m18:56:13.663108 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m18:56:13.663419 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.crypto_analytics.source_not_null_crypto_analytics_prices_high.17e77c77d3, now test.crypto_analytics.source_unique_crypto_analytics_news_url_hash.e48008dd53)
+[0m18:56:13.663725 [debug] [Thread-1 (]: Began compiling node test.crypto_analytics.source_not_null_crypto_analytics_prices_volume.87c79dc605
+[0m18:56:13.664356 [debug] [Thread-2 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_low.76694e1a2e
+[0m18:56:13.664616 [debug] [Thread-3 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_open.d78e3ebfc8
+[0m18:56:13.664912 [debug] [Thread-4 (]: Began compiling node test.crypto_analytics.source_unique_crypto_analytics_news_url_hash.e48008dd53
+[0m18:56:13.667917 [debug] [Thread-1 (]: Writing injected SQL for node "test.crypto_analytics.source_not_null_crypto_analytics_prices_volume.87c79dc605"
+[0m18:56:13.668417 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m18:56:13.673156 [debug] [Thread-4 (]: Writing injected SQL for node "test.crypto_analytics.source_unique_crypto_analytics_news_url_hash.e48008dd53"
+[0m18:56:13.673957 [debug] [Thread-3 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_open.d78e3ebfc8
+[0m18:56:13.674743 [debug] [Thread-1 (]: Began executing node test.crypto_analytics.source_not_null_crypto_analytics_prices_volume.87c79dc605
+[0m18:56:13.675085 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:56:13.675377 [debug] [Thread-4 (]: Began executing node test.crypto_analytics.source_unique_crypto_analytics_news_url_hash.e48008dd53
+[0m18:56:13.676005 [debug] [Thread-1 (]: Finished running node test.crypto_analytics.source_not_null_crypto_analytics_prices_volume.87c79dc605
+[0m18:56:13.676312 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m18:56:13.676963 [debug] [Thread-4 (]: Finished running node test.crypto_analytics.source_unique_crypto_analytics_news_url_hash.e48008dd53
+[0m18:56:13.678015 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:56:13.678269 [debug] [MainThread]: Connection 'list_crypto-analytics-2026_crypto_analytics_dev_marts_crypto_staging' was properly closed.
+[0m18:56:13.678507 [debug] [MainThread]: Connection 'test.crypto_analytics.source_not_null_crypto_analytics_prices_open.d78e3ebfc8' was properly closed.
+[0m18:56:13.678716 [debug] [MainThread]: Connection 'test.crypto_analytics.source_not_null_crypto_analytics_prices_low.76694e1a2e' was properly closed.
+[0m18:56:13.678920 [debug] [MainThread]: Connection 'test.crypto_analytics.source_unique_crypto_analytics_news_url_hash.e48008dd53' was properly closed.
+[0m18:56:13.679120 [debug] [MainThread]: Connection 'test.crypto_analytics.source_not_null_crypto_analytics_prices_volume.87c79dc605' was properly closed.
+[0m18:56:13.681506 [debug] [MainThread]: Command end result
+[0m18:56:13.713935 [debug] [MainThread]: Wrote artifact WritableManifest to .\target\manifest.json
+[0m18:56:13.716731 [debug] [MainThread]: Wrote artifact SemanticManifest to .\target\semantic_manifest.json
+[0m18:56:13.723182 [debug] [MainThread]: Wrote artifact RunExecutionResult to .\target\run_results.json
+[0m18:56:13.724113 [debug] [MainThread]: Command `dbt compile` succeeded at 18:56:13.723977 after 5.44 seconds
+[0m18:56:13.724548 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015981BBFD80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000159816418B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000159816402D0>]}
+[0m18:56:13.724893 [debug] [MainThread]: Flushing usage events
+[0m18:56:14.219833 [debug] [MainThread]: An error was encountered while trying to flush usage events

@@ -1,0 +1,23 @@
+crypto_analytics:
+  outputs:
+    dev:
+      type: bigquery
+      method: oauth
+      project: crypto-analytics-2026
+      dataset: crypto_analytics_dev_marts
+      location: europe-north1
+      threads: 4
+      timeout_seconds: 300
+      priority: interactive
+      retries: 1
+    prod:
+      type: bigquery
+      method: oauth
+      project: crypto-analytics-2026
+      dataset: crypto_analytics_prod_marts
+      location: europe-north1
+      threads: 4
+      timeout_seconds: 300
+      priority: interactive
+      retries: 1
+  target: dev

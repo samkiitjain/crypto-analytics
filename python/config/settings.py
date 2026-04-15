@@ -23,7 +23,7 @@ NEWS_KEYWORDS = {
 }
 
 NEWS_EXCLUDED_DOMAINS = "pypi.org,github.com,stackoverflow.com"
-NEWS_PAGE_SIZE = 20
+NEWS_PAGE_SIZE = 20 #Incase we want to limit it.
 
 ## API endpoints
 COIN_GECKO_API_URL = "https://api.coingecko.com/api/v3"

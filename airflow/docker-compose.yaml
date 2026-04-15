@@ -31,6 +31,7 @@ x-airflow-common: &airflow-common
     NEWS_API_KEY: ${NEWS_API_KEY}
     AIRFLOW__CORE__EXECUTION_API_SERVER_URL: 'http://airflow-apiserver:8080/execution/'
     AIRFLOW__API_AUTH__JWT_SECRET: ${AIRFLOW_SECRET_KEY}
+    PYTHONPATH: /opt/crypto_pipeline
 
   volumes:
     - ./dags:/opt/airflow/dags
@@ -38,6 +39,7 @@ x-airflow-common: &airflow-common
     - ./plugins:/opt/airflow/plugins
     - ${GCLOUD_ADC_PATH}:/home/airflow/.config/gcloud:ro
     - ../dbt:/opt/airflow/dbt
+    - ../python:/opt/crypto_pipeline
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     postgres:

@@ -1,0 +1,41 @@
+name: 'crypto_analytics'
+version: '1.0.0'
+config-version: 2
+
+#------------profile------------------------------
+profile: 'crypto_analytics'
+#-------------------------------------------------
+
+#---Directory mapping-----------------------------
+model-paths: ['models']
+test-paths: ['tests']
+macro-paths: ['macros']
+clean-targets: ['target', 'dbt_packages']
+#-------------------------------------------------
+
+#---Model configuration---------------------------
+#Each folder maps to Bigquery dataset via the custom generate_schema_name macro placed in macro/generate_schema_name.sql
+#
+#Dataset naming conventions as per BQ is
+##   staging      → crypto_analytics_{env}_crypto_staging
+#    intermediate → crypto_analytics_{env}_crypto_marts
+#    marts        → crypto_analytics_{env}_crypto_marts
+#
+# intermediate and marts dataset is intentionaly kept common because tables in former layer are not exposed externally and marts are to streamlit app.
+
+models:
+   crypto_analytics:
+     staging:
+        +schema: crypto_staging
+        +materialized: view
+        +tags: ['staging', 'bronze']
+
+     intermediate:
+        +schema: crypto_marts
+        +materialized: view
+        +tags: ['intermediate', 'silver']
+    
+     marts:
+        +schema: crypto_marts
+        +materialized: table
+        +tags: ['marts', 'gold']

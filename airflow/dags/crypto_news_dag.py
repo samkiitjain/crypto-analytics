@@ -32,7 +32,7 @@ def crypto_news_dag():
         """
         from ingestion.ingest_news_articles import run # type: ignore
 
-        file_url = run(lookup_days=30)
+        file_url = run(lookup_days=30) # pulling news for past 365 days since free tier news API doesn't allow date based look up to do traditional backfill.
         return file_url
     
 

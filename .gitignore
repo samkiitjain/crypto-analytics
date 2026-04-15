@@ -30,3 +30,6 @@ data/
 
 #airflow logs
 airflow/logs/
+
+dbt/dbt_packages/
+dbt/target/

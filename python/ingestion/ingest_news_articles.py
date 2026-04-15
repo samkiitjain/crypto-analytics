@@ -95,25 +95,25 @@ def parse_articles(articles: list, coin_id: str, keyword: str, ingested_at : dat
 
     for article in articles:
         title = article.get("title") or ""
-        descripton = article.get("description") or ""
+        description = article.get("description") or ""
         url = article.get("url") or ""
 
-        if not title and not descripton:
+        if not title and not description:
             log.warning(f"skipping article with no title and description | url : {url}")
             continue
         
-        text_to_score_sentiment = f"{title} {descripton}".strip()
+        text_to_score_sentiment = f"{title} {description}".strip()
         sentiment_score = score_sentiment(text_to_score_sentiment)
 
         records.append({
             "coin": coin_id,
             "keyword" : keyword,
-            "source_name": article.get("source", []).get("name"),
-            "description" : article.get("descripton"),
+            "source_name": article.get("source", {}).get("name"),
+            "description" : article.get("description"),
             "author": article.get("author"),
             "title": article.get("title"),
             "url_hash" : hash_url(article.get("url")),
-            "published_at":     article.get("publishedAt"),
+            "published_at": article.get("publishedAt"),
             "ingested_at" : ingested_at,
             **sentiment_score
             }

@@ -1,0 +1,122 @@
+version: 2
+
+sources:
+    - name: crypto_analytics
+      description: > 
+        The source data for crypto analytics project. Raw landing zone data written by Airflow pipelines.
+        The data is consumed from CoinGecko API and News API to GCS and then it is loaded into BigQuery raw tables.
+      database: crypto-analytics-2026
+      schema: "crypto_analytics_{{ target.name }}_raw"
+      
+      config:
+        freshness:
+          warn_after: {count: 1, period: day}
+          error_after: {count: 2, period: day}
+      
+        loaded_at_field: ingested_at
+
+      tables:
+        - name: prices
+          description: >
+            The raw data of coins information from CoinGecko API. It contains the details of coins such as id, symbol, name, image, market data, etc.
+          columns:
+            - name: coin
+              description: The unique identifier of the coin in CoinGecko.
+              tests:
+                - not_null
+                - accepted_values:
+                    arguments:
+                      values: ["bitcoin", "ethereum", "ripple", "litecoin", "cardano"]
+            
+            - name: date
+              description: OHCLV date (UTC)
+              tests:
+                - not_null
+            
+            - name: open
+              description: Opening prices in USD
+              tests:
+                - not_null
+            
+            - name: high
+              description: highest prices in USD on that day
+              tests:
+                - not_null
+            
+            - name: low
+              description: lowest prices in USD on that day.
+              tests:
+                - not_null
+            
+            - name: close
+              description: closing prices in USD
+              tests:
+                - not_null
+            
+            - name: volume
+              description: total trading volume in 24 hr
+              tests:
+                - not_null
+            
+            - name: ingested_at
+              description: UTC timestamp when this row was written by Airflow dag
+              tests:
+                - not_null
+
+
+        - name: news
+          description: >
+            Daily news articles fetched from NewsAPI free tier.
+            Deduplicated by url_hash before load. VADER sentiment scores
+            computed in Python during ingestion (not in dbt).
+          columns:
+            - name: coin
+              description: Coin this article was fetched for.
+              tests:
+                - not_null
+    
+            - name: keyword
+              description: Search keyword used to fetch this article from NewsAPI.
+    
+            - name: title
+              description: Article title.
+              tests:
+                - not_null
+    
+            - name: url_hash
+              description: MD5 hash of the article URL. Used for deduplication.
+              tests:
+                - not_null
+                - unique
+    
+            - name: published_at
+              description: Publication timestamp from NewsAPI (UTC).
+              tests:
+                - not_null
+    
+            - name: ingested_at
+              description: UTC timestamp when this row was written by the Airflow DAG.
+              tests:
+                - not_null
+    
+            - name: sentiment_compound
+              description: VADER compound score. Range -1.0 (most negative) to 1.0 (most positive).
+              tests:
+                - not_null
+    
+            - name: sentiment_label
+              description: Bucketed label derived from compound score.
+              tests:
+                - not_null
+                - accepted_values:
+                    arguments:
+                      values: ["bitcoin", "ethereum", "ripple", "litecoin", "cardano"]
+    
+            - name: sentiment_positive
+              description: VADER positive component score. Range 0.0 to 1.0.
+    
+            - name: sentiment_negative
+              description: VADER negative component score. Range 0.0 to 1.0.
+    
+            - name: sentiment_neutral
+              description: VADER neutral component score. Range 0.0 to 1.0.
