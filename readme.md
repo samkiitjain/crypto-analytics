@@ -24,19 +24,7 @@ data availability. That felt like the right way to do it.
 
 ## Architecture
 
-```
-CoinGecko API ─┐
-               ├─→ Python ingestion ─→ GCS (parquet, Hive-partitioned) ─→ BigQuery raw
-NewsAPI ───────┘                                                               │
-  ↓
-                                                               Airflow asset-based trigger
-  ↓
-                                                                    dbt transformation
-                                                               bronze → silver → gold
-                                                                               │
-                                                                               ↓
-                                                                  Streamlit dashboard
-```
+![alt text](image-1.png)
 
 ---
 
@@ -60,44 +48,67 @@ NewsAPI ───────┘                                                
 
 ## Project structure
 
-```
 CRYPTO-ANALYSIS/
-├── terraform/               # Infrastructure provisioning
-│   ├── main.tf
+├── terraform/                    # Infrastructure provisioning
+│   ├── main.tf                   # GCS bucket + BigQuery datasets via for_each
 │   ├── variables.tf
 │   └── envs/
 │       ├── dev.tfvars
 │       ├── staging.tfvars
 │       └── prod.tfvars
 │
-├── python/                  # Ingestion layer
-│   ├── config/settings.py
-│   ├── utils/               # Logger, file writer, GCS writer, factory
-│   └── ingestion/           # CoinGecko client, NewsAPI client, orchestrators
+├── python/                       # Ingestion layer
+│   ├── config/settings.py        # Centralised config, env-driven
+│   ├── utils/                    # Logger, file writer, GCS writer, factory
+│   └── ingestion/                # CoinGecko client, NewsAPI client, orchestrators
 │
-├── airflow/                 # Orchestration
+├── airflow/                      # Orchestration
 │   ├── dags/
-│   │   ├── assets.py        # Asset definitions
-│   │   ├── crypto_prices_daily.py
-│   │   ├── crypto_news_daily.py
+│   │   ├── assets.py             # Asset definitions (event-driven scheduling)
+│   │   ├── crypto_prices_dag.py
+│   │   ├── crypto_news_dags.py
 │   │   └── crypto_transform.py
-│   ├── Dockerfile
-│   └── docker-compose.yml
+│   ├── Dockerfile                # Installs dependencies only, code via volume mount
+│   └── docker-compose.yml        # Python code mounted as volume for dev iteration
 │
-├── dbt/                     # Transformation layer
+├── dbt/                          # Transformation layer
 │   ├── models/
-│   │   ├── staging/         # Bronze
-│   │   ├── intermediate/    # Silver
-│   │   └── marts/           # Gold
+│   │   ├── staging/              # Bronze — type casting, surrogate keys, source checks
+│   │   │   ├── stg_crypto_prices.sql
+│   │   │   └── stg_crypto_news.sql
+│   │   ├── intermediate/         # Silver — deduplication, cleaning
+│   │   │   ├── int_crypto_prices_cleaned.sql
+│   │   │   └── int_crypto_news_cleaned.sql
+│   │   └── marts/                # Gold — dimensional model
+│   │       ├── dim_coins.sql
+│   │       ├── fact_prices.sql
+│   │       ├── fact_news.sql
+│   │       └── fact_price_sentiment.sql
 │   ├── macros/
-│   │   └── generate_schema_name.sql
+│   │   └── generate_schema_name.sql  # Mirrors Terraform dataset naming convention
 │   ├── dbt_project.yml
 │   └── profiles.yml
 │
-└── streamlit/               # Dashboard (in progress)
-```
-
+└── streamlit/                    # Dashboard (in progress)
 ---
+
+**dbt model layers**
+**Bronze (staging)** — views on top of raw tables. Explicit type casts, surrogate keys,
+source freshness checks. No business logic.
+
+**Silver (intermediate)** — deduplication using ROW_NUMBER() window functions. One clean
+row per coin per timestamp for prices, one per article for news.
+
+**Gold (marts)** — dimensional model following Kimball conventions:
+
+- `dim_coins` — dimension table, one row per coin
+- `fact_prices` — incremental fact table, OHLCV by coin and timestamp,
+partitioned by timestamp, clustered by coin
+- `fact_news` — incremental fact table, one row per article with VADER sentiment scores
+- `fact_price_sentiment` — joined view of price and sentiment for dashboard consumption
+
+Incremental models use ingested_at as the watermark — only new rows are processed
+on each run, not the full table
 
 ## Decisions worth explaining
 
@@ -196,7 +207,24 @@ dbt test --target dev --profiles-dir . --project-dir .
 | Terraform infrastructure | ✅ Complete |
 | Python ingestion layer | ✅ Complete |
 | Airflow 3.0 orchestration | ✅ Complete |
-| dbt transformation layer | 🔄 In progress |
+| dbt transformation layer | ✅ Complete |
 | Streamlit dashboard | ⏳ Planned |
+
+## Background
+ 
+My Java work over 11 years covered API middleware, authentication and authorisation services,
+event-driven integrations, and batch processing — the kind of backend work where you spend
+a lot of time in meetings translating what the business wants into system design. I was good
+at it but I wanted to work closer to the data and the infrastructure.
+ 
+I started this project to learn data engineering properly, not just follow tutorials. If I
+were starting over I would have made the switch earlier. The fundamentals transfer — distributed
+systems thinking, ownership boundaries, designing for failure, building for the environment you
+will eventually need — but the problems feel more interesting to me here.
+ 
+The Streamlit dashboard is the next and final piece.
+ 
+---
+
 
 ![Data architecture](/project_flow.svg)
