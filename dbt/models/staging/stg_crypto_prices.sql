@@ -14,8 +14,8 @@
       - Add a surrogate key for downstream joins
       - Surface ingested_at for source freshness tracking
  
-    Source: crypto_analytics_2026_{env}_crypto_analytics.prices
-    Target: crypto_analytics_2026_{env}_crypto_staging.stg_crypto__prices
+    Source: crypto_analytics_2026_{env}_raw.prices
+    Target: crypto_analytics_2026_{env}_staging.stg_crypto_prices
 #}
 
 with source as (
@@ -32,14 +32,13 @@ staged as (
         cast(timestamp_utc as timestamp) as value_timestamp,
 
         ---- metrics
-        cast(open_usd as float) as open_usd,
-        cast(high_usd as float) as high_usd,
-        cast(low_usd as float) as low_usd,
-        cast(close_usd as float) as close_usd,
+        cast(open_usd as float64) as open_usd,
+        cast(high_usd as float64) as high_usd,
+        cast(low_usd as float64) as low_usd,
+        cast(close_usd as float64) as close_usd,
 
         -----metadata
-        cast(ingested_at as timestamp) as ingested_at,
-        cast(source as string) as ingested_source
+        cast(ingested_at as timestamp) as ingested_at
 
     from source 
     where coin_id is not null and timestamp_utc is not null

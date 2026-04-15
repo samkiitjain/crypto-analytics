@@ -9,7 +9,7 @@ with sources as (
     select * from {{ source('crypto_analytics', 'news') }}
 ),
 
-with staged as (
+staged as (
     select
       --- Key ---------------------
       {{dbt_utils.generate_surrogate_key(['coin', 'url_hash'])}} as news_id,
@@ -28,12 +28,14 @@ with staged as (
       cast(ingested_at as timestamp) as ingested_at,
 
       ----- metrics -----------------
-      cast(sentiment_compound as float) as sentiment_compound,
-      cast(sentiment_positive as float) as sentiment_positive,
-      cast(sentiment_negative as float) as sentiment_negative,
-      cast(sentiment_neutral as float) as sentiment_neutral,
-      cast(sentiment_label as float) as sentiment_label
+      cast(sentiment_compound as float64) as sentiment_compound,
+      cast(sentiment_positive as float64) as sentiment_positive,
+      cast(sentiment_negative as float64) as sentiment_negative,
+      cast(sentiment_neutral as float64) as sentiment_neutral,
+      cast(sentiment_label as string) as sentiment_label
     
     from sources
     where coin is not null and published_at is not null
 )
+
+select * from staged

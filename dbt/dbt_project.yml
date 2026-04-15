@@ -17,25 +17,25 @@ clean-targets: ['target', 'dbt_packages']
 #Each folder maps to Bigquery dataset via the custom generate_schema_name macro placed in macro/generate_schema_name.sql
 #
 #Dataset naming conventions as per BQ is
-##   staging      → crypto_analytics_{env}_crypto_staging
-#    intermediate → crypto_analytics_{env}_crypto_marts
-#    marts        → crypto_analytics_{env}_crypto_marts
+##   staging      → crypto_analytics_{env}_staging
+#    intermediate → crypto_analytics_{env}_marts
+#    marts        → crypto_analytics_{env}_marts
 #
 # intermediate and marts dataset is intentionaly kept common because tables in former layer are not exposed externally and marts are to streamlit app.
 
 models:
    crypto_analytics:
      staging:
-        +schema: crypto_staging
+        +schema: staging
         +materialized: view
         +tags: ['staging', 'bronze']
 
      intermediate:
-        +schema: crypto_marts
+        +schema: marts
         +materialized: view
         +tags: ['intermediate', 'silver']
     
      marts:
-        +schema: crypto_marts
+        +schema: marts
         +materialized: table
         +tags: ['marts', 'gold']

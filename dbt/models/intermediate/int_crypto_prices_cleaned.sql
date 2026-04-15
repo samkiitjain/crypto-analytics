@@ -3,7 +3,7 @@ with base as (
 ),
 
 deduped as (
-    select *,
+    select *
     from (
         select *, row_number() over ( 
             partition by coin_id, value_timestamp

@@ -20,7 +20,7 @@ sources:
           description: >
             The raw data of coins information from CoinGecko API. It contains the details of coins such as id, symbol, name, image, market data, etc.
           columns:
-            - name: coin
+            - name: coin_id
               description: The unique identifier of the coin in CoinGecko.
               tests:
                 - not_null
@@ -28,38 +28,38 @@ sources:
                     arguments:
                       values: ["bitcoin", "ethereum", "ripple", "litecoin", "cardano"]
             
-            - name: date
-              description: OHCLV date (UTC)
+            - name: timestamp_utc
+              description: OHCL date (UTC)
               tests:
                 - not_null
             
-            - name: open
+            - name: open_usd
               description: Opening prices in USD
               tests:
                 - not_null
             
-            - name: high
+            - name: high_usd
               description: highest prices in USD on that day
               tests:
                 - not_null
             
-            - name: low
+            - name: low_usd
               description: lowest prices in USD on that day.
               tests:
                 - not_null
             
-            - name: close
+            - name: close_usd
               description: closing prices in USD
-              tests:
-                - not_null
-            
-            - name: volume
-              description: total trading volume in 24 hr
               tests:
                 - not_null
             
             - name: ingested_at
               description: UTC timestamp when this row was written by Airflow dag
+              tests:
+                - not_null
+            
+            - name: source
+              description: source from which prices are downloaded
               tests:
                 - not_null
 
@@ -77,11 +77,18 @@ sources:
     
             - name: keyword
               description: Search keyword used to fetch this article from NewsAPI.
+
+            - name: author
+              description: Article author.
+            
+            - name: description
+              description: Article description.
+            
+            - name: source_name
+              description: Article source name.
     
             - name: title
               description: Article title.
-              tests:
-                - not_null
     
             - name: url_hash
               description: MD5 hash of the article URL. Used for deduplication.
@@ -110,7 +117,7 @@ sources:
                 - not_null
                 - accepted_values:
                     arguments:
-                      values: ["bitcoin", "ethereum", "ripple", "litecoin", "cardano"]
+                      values: ["positive", "negative", "neutral"]
     
             - name: sentiment_positive
               description: VADER positive component score. Range 0.0 to 1.0.

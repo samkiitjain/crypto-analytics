@@ -18,7 +18,7 @@ news as (
 
 select
     p.coin_id,
-    p.price_timestamp,
+    p.value_timestamp,
     p.close_usd,
 
     n.published_at,
@@ -26,5 +26,5 @@ select
 
 from prices p
 left join news n
-    on p.coin_id = n.coin_id
-    and date(p.price_timestamp) = date(n.published_at)
+    on p.coin_id = n.coin
+    and date(p.value_timestamp) = date(n.published_at)

@@ -28,7 +28,7 @@
     #}
 
     {%- set env = target.name -%}
-    {%- set project_prefix = "crypto_analytics_2026" -%}
+    {%- set project_prefix = "crypto_analytics" -%}
 
     {%- if custom_schema_name is none -%}
         {# Fallback — should not happen if dbt_project.yml is correct #}

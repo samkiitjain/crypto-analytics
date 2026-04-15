@@ -3,8 +3,9 @@
     materialized='incremental',
     unique_key='price_id',
     partition_by={
-      "field": "price_date",
-      "data_type": "date"
+      "field": "value_timestamp",
+      "data_type": "timestamp",
+      "granularity": "day"
     },
     cluster_by=['coin_id']
   )
