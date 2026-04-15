@@ -48,6 +48,7 @@ data availability. That felt like the right way to do it.
 
 ## Project structure
 
+```
 CRYPTO-ANALYSIS/
 ├── terraform/                    # Infrastructure provisioning
 │   ├── main.tf                   # GCS bucket + BigQuery datasets via for_each
@@ -65,8 +66,8 @@ CRYPTO-ANALYSIS/
 ├── airflow/                      # Orchestration
 │   ├── dags/
 │   │   ├── assets.py             # Asset definitions (event-driven scheduling)
-│   │   ├── crypto_prices_dag.py
-│   │   ├── crypto_news_dags.py
+│   │   ├── crypto_prices_daily.py
+│   │   ├── crypto_news_daily.py
 │   │   └── crypto_transform.py
 │   ├── Dockerfile                # Installs dependencies only, code via volume mount
 │   └── docker-compose.yml        # Python code mounted as volume for dev iteration
@@ -90,6 +91,7 @@ CRYPTO-ANALYSIS/
 │   └── profiles.yml
 │
 └── streamlit/                    # Dashboard (in progress)
+```
 ---
 
 **dbt model layers**
