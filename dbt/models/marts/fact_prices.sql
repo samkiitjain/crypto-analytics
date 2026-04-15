@@ -13,7 +13,7 @@
 with source as (
 
     select * 
-    from {{ ref('int_crypto__prices') }}
+    from {{ ref('int_crypto_prices_cleaned') }}
 
     {% if is_incremental() %}
         where ingested_at > (

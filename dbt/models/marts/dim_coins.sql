@@ -6,4 +6,4 @@
 
 select distinct
     coin_id
-from {{ ref('int_crypto__prices') }}
+from {{ ref('int_crypto_prices_cleaned') }}
