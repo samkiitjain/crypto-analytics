@@ -43,6 +43,7 @@ CRYPTO-ANALYSIS/
 ├── terraform/                    # Infrastructure provisioning
 │   ├── main.tf                   # GCS bucket + BigQuery datasets via for_each
 │   ├── variables.tf
+│   │── provider.tf
 │   └── envs/
 │       ├── dev.tfvars
 │       ├── staging.tfvars
@@ -222,5 +223,3 @@ dbt test --target dev --profiles-dir . --project-dir .
 | Streamlit dashboard | ✅ Complete |
  
 ---
- 
-![Data architecture](project_flow.svg)
