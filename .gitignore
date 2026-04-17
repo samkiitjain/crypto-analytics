@@ -33,3 +33,4 @@ airflow/logs/
 
 dbt/dbt_packages/
 dbt/target/
+dbt7logs/

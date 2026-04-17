@@ -1,35 +1,25 @@
 # CryptoLens
-
-I am a senior developer with 11 years of Java and Spring Boot experience. I decided to transition
-into data engineering because the problems are more interesting to me — it is core technical work,
-close to infrastructure, and less about translating business requirements into CRUD logic.
-
-CryptoLens is the project I built to make that transition real rather than theoretical.
-
----
-
-## What it does
-
+ 
 The pipeline pulls daily crypto price data from CoinGecko and financial news from NewsAPI, stores
 everything in Google Cloud Storage as partitioned parquet files, loads it into BigQuery, and
-transforms it through a medallion architecture using dbt. The end goal is a Streamlit dashboard
-that puts price movement and news sentiment side by side so you can see whether the market was
-reacting to news or ignoring it.
-
+transforms it through a medallion architecture using dbt. The Streamlit dashboard puts price
+movement and news sentiment side by side so you can see whether the market was reacting to
+news or ignoring it.
+ 
 It runs fully automated on Airflow 3.0. The transformation step only fires when both the price
 and news ingestion jobs have finished successfully — not on a fixed schedule, but triggered by
 data availability. That felt like the right way to do it.
-
+ 
 ---
-
+ 
 ## Architecture
-
-![alt text](image-1.png)
-
+ 
+![Architecture](image-1.png)
+ 
 ---
-
+ 
 ## Stack
-
+ 
 | Layer | Technology |
 |---|---|
 | Infrastructure | Terraform |
@@ -40,14 +30,14 @@ data availability. That felt like the right way to do it.
 | Orchestration | Apache Airflow 3.0 |
 | Transformation | dbt Core + dbt-bigquery |
 | Sentiment | VADER |
-| Dashboard | Streamlit (in progress) |
+| Dashboard | Streamlit |
 | Package management | uv |
 | Containerisation | Docker + Docker Compose |
-
+ 
 ---
-
+ 
 ## Project structure
-
+ 
 ```
 CRYPTO-ANALYSIS/
 ├── terraform/                    # Infrastructure provisioning
@@ -70,7 +60,7 @@ CRYPTO-ANALYSIS/
 │   │   ├── crypto_news_daily.py
 │   │   └── crypto_transform.py
 │   ├── Dockerfile                # Installs dependencies only, code via volume mount
-│   └── docker-compose.yml        # Python code mounted as volume for dev iteration
+│   └── docker-compose.yml        # All services — Airflow, Postgres, Streamlit
 │
 ├── dbt/                          # Transformation layer
 │   ├── models/
@@ -90,143 +80,147 @@ CRYPTO-ANALYSIS/
 │   ├── dbt_project.yml
 │   └── profiles.yml
 │
-└── streamlit/                    # Dashboard (in progress)
+└── streamlit-dashboard/          # Dashboard layer
+    ├── Dockerfile
+    ├── pyproject.toml
+    ├── Home.py                   # Landing page — coin selector, date range, KPI cards
+    ├── utils/
+    │   └── bq_client.py          # BigQuery query functions with caching
+    └── pages/
+        ├── 1_Price_Trends.py     # OHLC candlestick chart
+        ├── 2_Sentiment.py        # Dual-axis price vs sentiment chart
+        └── 3_Correlation.py      # Scatter plot with quadrant analysis
 ```
+ 
 ---
-
-**dbt model layers**
+ 
+## dbt model layers
+ 
 **Bronze (staging)** — views on top of raw tables. Explicit type casts, surrogate keys,
 source freshness checks. No business logic.
-
+ 
 **Silver (intermediate)** — deduplication using ROW_NUMBER() window functions. One clean
 row per coin per timestamp for prices, one per article for news.
-
+ 
 **Gold (marts)** — dimensional model following Kimball conventions:
-
+ 
 - `dim_coins` — dimension table, one row per coin
-- `fact_prices` — incremental fact table, OHLCV by coin and timestamp,
-partitioned by timestamp, clustered by coin
+- `fact_prices` — incremental fact table, OHLC by coin and timestamp, partitioned by timestamp, clustered by coin
 - `fact_news` — incremental fact table, one row per article with VADER sentiment scores
-- `fact_price_sentiment` — joined view of price and sentiment for dashboard consumption
-
-Incremental models use ingested_at as the watermark — only new rows are processed
-on each run, not the full table
-
+- `fact_price_sentiment` — joined table of price and sentiment for dashboard consumption
+Incremental models use `ingested_at` as the watermark — only new rows are processed
+on each run, not the full table.
+ 
+---
+ 
+## Dashboard
+ 
+The Streamlit dashboard reads from the gold layer (`crypto_analytics_dev_marts`) and runs
+as a Docker container alongside the Airflow stack.
+ 
+**Pages:**
+ 
+- **Home** — coin selector and date range in the sidebar, three KPI cards (latest close,
+  period high, period low) loaded from `fact_prices`
+- **Price Trends** — OHLC candlestick chart for the selected coin and date range
+- **Sentiment** — dual-axis chart overlaying daily close price against average VADER
+  sentiment score; sentiment breakdown metrics (positive/negative/neutral day counts)
+- **Correlation** — scatter plot of daily sentiment score vs price change %, Pearson
+  correlation coefficient, and a quadrant analysis showing directional accuracy
+Authentication to BigQuery uses Application Default Credentials — the same gcloud
+credentials directory used by Airflow is mounted into the Streamlit container.
+ 
+---
+ 
 ## Decisions worth explaining
-
+ 
 **Terraform owns all infrastructure, dbt owns nothing.**
 BigQuery datasets are created by Terraform before any pipeline code runs. dbt is configured to
-write into datasets that already exist — if they don't, it fails loudly. I made this call
-because I've seen what happens in backend systems when application code starts creating
-infrastructure as a side effect. It becomes impossible to audit, hard to promote across
-environments, and fragile in ways that only show up at the worst moments. Data pipelines
-shouldn't be different.
-
+write into datasets that already exist — if they don't, it fails loudly. This separation keeps
+infrastructure auditable, promotable across environments, and decoupled from pipeline execution.
+ 
 **Asset-based scheduling instead of time-based polling.**
 The transformation DAG doesn't run on a cron. It listens for completion signals from the two
 ingestion DAGs and fires only when both have succeeded. This means the transform layer always
-works on complete data — there's no race condition between ingestion finishing and
-transformation starting, and no sensor tasks sitting idle burning resources. Airflow 3.0 makes
-this clean with its Asset model. It's the right pattern for this kind of dependency.
-
+works on complete data — no race condition, no sensor tasks burning resources. Airflow 3.0
+makes this clean with its Asset model.
+ 
 **VADER for sentiment instead of a cloud NLP API.**
-I didn't want the pipeline's critical path to depend on a third-party API beyond the two data
-sources it already relies on. VADER runs locally in the ingestion layer, adds no per-call cost,
-and has no failure mode beyond the library itself. For financial news headline sentiment it's
-accurate enough. If I needed deeper analysis I'd revisit this, but I wouldn't add a cloud
-dependency without a clear reason.
-
+No third-party dependency on the critical path beyond the two data sources the pipeline already
+relies on. VADER runs locally in the ingestion layer, adds no per-call cost, and has no failure
+mode beyond the library itself.
+ 
 **Dataset naming mirrors Terraform exactly.**
 dbt's `generate_schema_name` macro is overridden to produce dataset names that match what
 Terraform creates — `crypto_analytics_{env}_{layer}`. Switching between dev and prod is a
-single `--target` flag. There are no hardcoded environment references anywhere in the SQL.
-This came out of an early decision to question the default naming dbt would have produced,
-which was ugly and inconsistent with the Terraform convention.
-
+single `--target` flag. No hardcoded environment references exist anywhere in the SQL.
+ 
 **Hive partitioning in GCS.**
-Parquet files are written with `year=/month=/day=/` path structure. BigQuery can apply partition
-pruning on top of this — date-filtered queries only scan the relevant partitions. It costs
-nothing to do this upfront and saves a lot of pain later when the data grows.
-
+Parquet files are written with `year=/month=/day=/` path structure. BigQuery applies partition
+pruning on date-filtered queries — only the relevant partitions are scanned. This costs nothing
+upfront and avoids pain as data grows.
+ 
 ---
-
+ 
 ## Environment promotion
-
+ 
 The pipeline promotes from dev to prod by changing one flag. Terraform has separate variable
-files per environment. dbt routes to the correct datasets based on `--target`. No
-environment-specific SQL exists anywhere.
-
+files per environment. dbt routes to the correct datasets based on `--target`.
+ 
 ```
 dev   → crypto_analytics_dev_raw / _staging / _marts
 prod  → crypto_analytics_prod_raw / _staging / _marts
 ```
-
+ 
 ---
-
+ 
 ## Data quality
-
+ 
 dbt tests run after every transformation as part of the Airflow DAG:
-
+ 
 - Uniqueness and not-null checks on all primary keys
 - Accepted value validation on sentiment labels
-- Source freshness checks — warns if raw data is older than 1 day,
-  errors if older than 2 days
-
-The idea is that a broken ingestion DAG should be caught before stale data reaches the
-dashboard, not after someone notices the numbers look wrong.
-
+- Source freshness checks — warns if raw data is older than 1 day, errors if older than 2 days
 ---
-
+ 
 ## Running it
-
+ 
 ```bash
 # Provision infrastructure
 cd terraform
 terraform apply -var-file="envs/dev.tfvars"
-
+ 
 # Run ingestion locally
 cd python
 uv run python -m ingestion.ingest_prices
 uv run python -m ingestion.ingest_news
-
-# Start Airflow
+ 
+# Start the full stack — Airflow + Streamlit dashboard
 cd airflow
 docker compose up -d
-
-# Run dbt
+ 
+# Airflow UI        → http://localhost:8080
+# Streamlit dashboard → http://localhost:8501
+ 
+# Run dbt manually
 cd dbt
 dbt deps
 dbt run --target dev --profiles-dir . --project-dir .
 dbt test --target dev --profiles-dir . --project-dir .
 ```
-
+ 
 ---
-
+ 
 ## Status
-
+ 
 | Component | Status |
 |---|---|
 | Terraform infrastructure | ✅ Complete |
 | Python ingestion layer | ✅ Complete |
 | Airflow 3.0 orchestration | ✅ Complete |
 | dbt transformation layer | ✅ Complete |
-| Streamlit dashboard | ⏳ Planned |
-
-## Background
- 
-My Java work over 11 years covered API middleware, authentication and authorisation services,
-event-driven integrations, and batch processing — the kind of backend work where you spend
-a lot of time in meetings translating what the business wants into system design. I was good
-at it but I wanted to work closer to the data and the infrastructure.
- 
-I started this project to learn data engineering properly, not just follow tutorials. If I
-were starting over I would have made the switch earlier. The fundamentals transfer — distributed
-systems thinking, ownership boundaries, designing for failure, building for the environment you
-will eventually need — but the problems feel more interesting to me here.
- 
-The Streamlit dashboard is the next and final piece.
+| Streamlit dashboard | ✅ Complete |
  
 ---
-
-
-![Data architecture](/project_flow.svg)
+ 
+![Data architecture](project_flow.svg)

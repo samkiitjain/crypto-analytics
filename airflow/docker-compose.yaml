@@ -108,6 +108,19 @@ services:
       _AIRFLOW_WWW_USER_USERNAME: admin
       _AIRFLOW_WWW_USER_PASSWORD: admin
     restart: "no"
+  
+  streamlit:
+    build:
+      context: ..
+      dockerfile: streamlit-dashboard/Dockerfile
+    ports:
+      - "8501:8501"
+    environment:
+      GCLOUD_PROJECT: ${GCP_PROJECT_ID}
+    volumes:
+      - ../streamlit-dashboard:/app
+      - ${GCLOUD_ADC_PATH}:/root/.config/gcloud:ro
+    restart: always
 
 volumes:
   postgres-db-volume:

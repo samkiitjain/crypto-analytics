@@ -22,7 +22,14 @@ select
     p.close_usd,
 
     n.published_at,
-    n.description
+    n.description,
+
+    -- sentiment columns added from fact_news
+    n.sentiment_compound,
+    n.sentiment_positive,
+    n.sentiment_negative,
+    n.sentiment_neutral,
+    n.sentiment_label
 
 from prices p
 left join news n
